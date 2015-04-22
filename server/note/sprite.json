@@ -1,0 +1,119 @@
+{"17116850": {
+    "id": 17116850,
+    "mode": 1,
+    "name": "rr",
+    "ctrl_data": {
+        "localFramesBarsData": {
+            "frameDuration": 0.1,
+            "frameTotalDuration": 6,
+            "totalFramesCount": 60,
+            "frameLength": 12,
+            "framesBarDataArr": [
+                {
+                    "id": 30488669,
+                    "spriteClassName": "s_1",
+                    "spriteEasing": "linear",
+                    "stageId": 63362440,
+                    "isControllerPlay": true,
+                    "frameDuration": 0.1,
+                    "frameTotalDuration": 6,
+                    "totalFramesCount": 60,
+                    "frameLength": 12,
+                    "keyFramesDataList": [
+                        {
+                            "id": 45278424,
+                            "index": 0,
+                            "setting": {
+                                "imgFileName": "",
+                                "display": "block",
+                                "x": 56,
+                                "y": -16,
+                                "backgroundColor": "transparent",
+                                "rotate": 0,
+                                "opacity": 1,
+                                "easing": "linear",
+                                "imgUrl": "",
+                                "className": "s_1",
+                                "width": 47,
+                                "height": 54,
+                                "rotateZ": 0,
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "perspective": 0,
+                                "initialWidth": 47,
+                                "initialHeight": 54
+                            }
+                        },
+                        {
+                            "id": 57521727,
+                            "index": 32,
+                            "setting": {
+                                "imgFileName": "",
+                                "display": "block",
+                                "x": 56,
+                                "y": -16,
+                                "backgroundColor": "rgba(31,153,240,1)",
+                                "rotate": 0,
+                                "opacity": 1,
+                                "easing": "linear",
+                                "imgUrl": "",
+                                "width": 47,
+                                "height": 54,
+                                "perspective": 0,
+                                "rotateZ": 0,
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "customSetting": {},
+                                "initialWidth": 47,
+                                "initialHeight": 54
+                            }
+                        }
+                    ],
+                    "emitType": "none",
+                    "emitEventName": ""
+                }
+            ],
+            "currentFrameId": null,
+            "currentKeyFrameId": 57521727,
+            "currentFramesBarId": 30488669,
+            "currentFramesBarEmitType": "none",
+            "currentFramesBarEmitEventName": ""
+        },
+        "localStagesData": {
+            "stageDataArr": [
+                {
+                    "name": null,
+                    "id": 63362440,
+                    "index": 0,
+                    "width": "100",
+                    "height": "120",
+                    "isControllerStage": true,
+                    "spriteListData": {
+                        "30488669": {
+                            "display": "block",
+                            "id": 30488669,
+                            "x": 56,
+                            "y": -16,
+                            "zIndex": 0,
+                            "width": 47,
+                            "height": 54,
+                            "className": "s_1",
+                            "spriteEasing": "linear",
+                            "backgroundColor": "rgba(31,153,240,1)",
+                            "rotate": 0,
+                            "opacity": 1,
+                            "imgUrl": "",
+                            "imgFileName": "",
+                            "listenEventNameList": []
+                        }
+                    }
+                }
+            ],
+            "currentSpriteId": 30488669,
+            "currentStageTransitionType": "移动",
+            "currentStageTransitionDirection": "utd"
+        }
+    },
+    "is_delete":"1",
+    "update_time":12353456
+}}

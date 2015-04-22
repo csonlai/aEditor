@@ -1,0 +1,11 @@
+extends layout/layout
+block content
+    h1 更新用户资料
+    form(method='post', action='/upload', enctype="multipart/form-data")
+        div
+            input(type='file',name='uploadimg')
+        div
+            input(type='text',name='img')
+        div
+            input(type='submit',value="上传")
+

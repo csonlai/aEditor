@@ -1,0 +1,22 @@
+{
+  "name": "express-hw",
+  "version": "1.0.0",
+  "description": "express hello world",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "jagusou",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "express": "^4.12.3",
+    "express-handlebars": "^2.0.0",
+    "formidable": "^1.0.17",
+    "jade": "~1.9.2",
+    "mongoose": "^4.0.1",
+    "path": "^0.11.14"
+  },
+  "devDependencies": {}
+}
