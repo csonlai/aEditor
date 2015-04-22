@@ -1,0 +1,101 @@
+{"36025646": {
+    "user_id":"124",
+    "id": 36025646, // id不用创建，默认会有
+    "name": "11",
+    "is_delete":"1",
+    "update_time":12353456,
+    "work_data":{
+        "localPagesData": {
+            "pagesDataArr": [
+                {
+                    "id": 92251155,
+                    "index": 0,
+                    "autoJump": false,
+                    "slideJump": false
+                }
+            ]
+        },
+        "localStagesData": {
+            "stageDataArr": [
+                {
+                    "id": 92251155,
+                    "index": 0,
+                    "width": 320,
+                    "height": 480,
+                    "spriteListData": {
+                        "77632029": {
+                            "display": "block",
+                            "id": 77632029,
+                            "x": 110,
+                            "y": 190,
+                            "zIndex": 0,
+                            "width": 100,
+                            "height": 100,
+                            "className": "s_0",
+                            "spriteEasing": "linear",
+                            "backgroundColor": "transparent",
+                            "rotate": 0,
+                            "opacity": 1,
+                            "imgUrl": "",
+                            "imgFileName": "",
+                            "listenEventNameList": []
+                        }
+                    }
+                }
+            ],
+            "currentStageIndex": 0,
+            "currentSpriteId": 77632029,
+            "currentStageTransitionType": "移动",
+            "currentStageTransitionDirection": "utd"
+        },
+        "localFramesBarsData": {
+            "frameDuration": 0.1,
+            "frameTotalDuration": 6,
+            "totalFramesCount": 60,
+            "frameLength": 12,
+            "framesBarDataArr": [
+                {
+                    "id": 77632029,
+                    "spriteClassName": "s_0",
+                    "spriteEasing": "linear",
+                    "stageId": 92251155,
+                    "isControllerPlay": true,
+                    "frameDuration": 0.1,
+                    "frameTotalDuration": 6,
+                    "totalFramesCount": 60,
+                    "frameLength": 12,
+                    "keyFramesDataList": [
+                        {
+                            "id": 73740088,
+                            "index": 0,
+                            "setting": {
+                                "imgFileName": "",
+                                "display": "block",
+                                "x": 110,
+                                "y": 190,
+                                "backgroundColor": "transparent",
+                                "rotate": 0,
+                                "opacity": 1,
+                                "easing": "linear",
+                                "imgUrl": "",
+                                "className": "s_0",
+                                "width": 100,
+                                "height": 100,
+                                "rotateZ": 0,
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "perspective": 0
+                            }
+                        }
+                    ],
+                    "emitType": "none",
+                    "emitEventName": ""
+                }
+            ],
+            "currentKeyFrameId": 73740088,
+            "currentFramesBarId": 77632029,
+            "currentFramesBarEmitType": "none",
+            "currentFramesBarEmitEventName": ""
+        }
+    }
+}}"
