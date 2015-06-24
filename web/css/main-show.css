@@ -1,0 +1,150 @@
+*{margin:0;padding: 0;}
+.main-show-container{
+	display: none;
+}
+.main-show-mask{
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 9999;
+}
+
+.main-show-area{
+	position: absolute;
+	background: #fff;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+.controller .main-show-area{
+	background: rgb(189, 189, 189);
+}
+
+/* 全局精灵 */
+/*.main-show-area > .ms-sprite{
+	z-index: 999 !important;
+}*/
+.main-show-area > .ms-global-sprite-wrap{
+	position: absolute;
+	z-index: 999 !important;
+}
+
+.pt-page-current{
+	visibility: visible;
+	z-index: 200 !important;
+}
+
+
+
+
+.main-show-close-btn{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	font-size: 40px;
+	border:none;
+}
+
+.ms-stage{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	background-size: 100% 100%;
+	overflow:hidden;
+	-webkit-user-select:none;
+}
+.ms-sprite{
+	position: absolute;
+	background-size: 100% 100%;
+/*	background-repeat: no-repeat;*/
+	color: #000;
+	overflow: hidden;
+	text-align: left;
+	word-break: break-all;
+	/*background-color: aquamarine;*/
+}
+
+/* 在编辑器的main_show预览状态下，显示'容器'标识 */
+/*.main-show-area .ms-sprite-empty-container{
+	border:1px solid #000;
+}*/
+/*.main-show-area .ms-sprite-empty-container:after{
+	content: '容器';
+	position: absolute;
+	width: 30px;  
+	height: 22px
+	left: 50%;
+	top:50%;
+	margin-left: -15px;
+	margin-top: -11px;
+	color:#000;
+}*/
+/*.ms-sprite-container{
+	position: absolute;
+	width:100%;
+	top:40%;
+	text-align: center;
+	margin:0 auto;
+}*/
+
+.ms-controller{
+	position: absolute;
+	background: gray;
+}
+
+.ms-controller-wrap{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.ms-no-animation .ms-sprite,.ms-no-animation .ms-controller,.ms-no-animation .controller-sprite{
+	-webkit-animation:none !important;
+}
+
+/* 这个controller-setting也有，看看怎样统一*/
+.controller-sprite{
+	position: absolute;
+	background-color: orange;
+	background-size:100% 100%;
+}
+
+.pt-page-current{
+	visibility: visible;
+	z-index: 100;
+}
+.show-class-name .ms-sprite{
+	outline: 1px solid #000;
+}
+.ms-sprite-class-name-tag{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.7);
+	color: #fff;
+	font-size: 12px;
+	padding: 0px 4px;
+}
+
+
+.scene .ms-stage > .ms-stage-container,
+.ms-global-sprite-wrap{
+	position: absolute;
+	width: 320px;
+	height: 480px;
+	left: 50%;
+	top: 50%;
+	margin-left: -160px;
+	margin-top: -240px;
+}

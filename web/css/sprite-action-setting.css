@@ -1,0 +1,23 @@
+
+.sprite-action-setting{
+	width:330px;
+}
+.sprite-action-setting label{
+	font-size: 14px;
+}
+.sprite-action-setting .sprite-action-event-input{
+	margin-left: 14px;
+	display: none;
+	height: 24px;
+  	width: 100px;
+}
+
+.sprite-action-setting table td{
+	padding: 5px 4px;
+	height: 20px;
+}
+
+.action-event-checkbox,.action-jump-next-checkbox{
+	position: relative;
+	top: -3px;
+}

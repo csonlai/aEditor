@@ -1,0 +1,26 @@
+/* 登录窗口 */
+.login-win{
+	position: fixed;
+	width: 300px;
+	height: 400px;
+	top: 50%;
+	left:50%;
+	margin: -200px 0 0 -100px;
+	z-index: 9999;
+}
+.login-win iframe{
+	height: 400px;
+	margin-top: 20px;
+	border: none;
+}
+
+.login-win-mask{
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 9999;
+}

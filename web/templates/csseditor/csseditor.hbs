@@ -1,0 +1,342 @@
+<div class="keyframe-setting-container panel panel-primary">
+
+	<h4 class="panel-heading">关键帧属性</h4>
+	<div class="setting-wrap pannel-body">
+
+
+
+		<div class="accordin-container panel panel-default">
+			<h5 class="panel-heading main-heading">常规</h5>
+			<div class="pannel-body form-inline">
+
+				<table class="setting-list" cellspacing="1">
+					<tr>
+						<td>
+							<div class="panel panel-default">
+								<h6 class="panel-heading">显示/隐藏</h6>	
+								<div class="pannel-body">
+
+									<div class="dropdown show-select">
+										<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+											显示
+											<span class="caret"></span>
+										</button>
+
+										<ul class="dropdown-menu" role="menu">
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">显示</a>
+											</li>
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">隐藏</a>
+											</li>
+										</ul>
+
+									</div>
+								</div>
+							</div>
+						</td>
+				
+						<td>
+							<!--<div class="panel panel-default">
+								<h6 class="panel-heading">图片</h6>	
+								<div class="pannel-body">
+									<div class="img-select-container">
+										<label class="img-select-text">暂无图片</label>
+										<input class="img-select-text-input form-control" >
+										<button class="img-select-input-btn btn btn-primary btn-xs">
+											选择
+											<input class="img-select-input form-control" type="file" >
+										</button>
+									</div>
+								</div>
+							</div>-->
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<div class="panel panel-default">
+								<h6 class="panel-heading">背景色</h6>
+								<div class="pannel-body">
+									<input class="background-image-input form-control" value="transparent" placeholder="背景色">
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="panel panel-default">
+								<h6 class="panel-heading">视距</h6>
+								<div class="pannel-body">
+									<input class="perspective-input form-control" data-input-name='perspective' value='0' placeholder="视距">
+								</div>
+							</div>
+						</td>
+					</tr>
+
+
+
+					<tr>
+						<td>
+							<div class="panel panel-default">
+								<h6 class="panel-heading">透明度</h6>
+								<div class="pannel-body">
+									<input class='opacity-input form-control' value='1' placeholder="透明度">
+								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="panel panel-default">
+								<h6 class="panel-heading">缓动</h5>
+								<div class="pannel-body">
+									<div class="dropdown ease-select">
+										<button class="btn btn-default dropdown-toggle" type="button" id="ease-select" data-toggle="dropdown" aria-expanded="true">
+										linear
+										<span class="caret"></span>
+										</button>
+
+										<ul class="dropdown-menu" role="menu">
+					
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">linear</a>
+											</li>
+
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">ease</a>
+											</li>
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">ease-in</a>
+											</li>
+
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">ease-out</a>
+											</li>
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">ease-in-out</a>
+											</li>
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">step-start</a>
+											</li>
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1">step-end</a>
+											</li>
+										</ul>
+									</div>
+
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	
+
+	
+		<div class="accordin-container panel panel-default">
+			<h5 class="panel-heading main-heading">尺寸</h5>
+			<div class="pannel-body">
+				<table class="setting-list">
+					<tr>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">宽度</h6>
+							<div class="pannel-body">
+								<input class='position-width-input form-control' value='0' placeholder="宽度">
+							</div>
+						</td>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">高度</h6>
+							<div class="pannel-body">
+								<input class='position-height-input form-control' value='0' placeholder="高度">
+							</div>
+						</td>	
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+
+		<div class="accordin-container panel panel-default">
+			<h5 class="panel-heading main-heading">位置</h5>
+			<div class="pannel-body">
+				<table class="setting-list">
+					<tr>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">X</h6>
+							<div class="pannel-body">
+								<input class='position-x-input form-control' value='0' placeholder="X轴位置">
+							</div>
+						</td>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">Y</h6>
+							<div lass="pannel-body">
+								<input class='position-y-input form-control' value='0' placeholder="Y轴位置">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+
+		<div class="accordin-container panel panel-default">
+			<h5 class="panel-heading main-heading">旋转</h5>
+			<div class="pannel-body">
+				<table class="setting-list">
+					<tr>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">rotateX:</h6>
+							<div class="pannel-body">
+								<input class='rotatex-input form-control' value='0' placeholder="X轴旋转">
+							</div>
+						</td>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">rotateY:</h6>
+							<div class="pannel-body">
+								<input class='rotatey-input form-control' value='0' placeholder="Y轴旋转">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">rotateZ:</h6>
+							<div class="pannel-body">
+								<input class='rotatez-input form-control' value='0' placeholder="Z轴旋转">
+							</div>
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+		<div class="accordin-container panel panel-default">
+			<h5 class="panel-heading main-heading">倾斜</h5>
+			<div class="pannel-body">
+				<table class="setting-list">
+					<tr>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">skewX:</h6>
+							<div class="pannel-body">
+								<input class='skewx-input form-control' value='0' placeholder="X轴倾斜">
+							</div>
+						</td>
+						<td class="panel panel-default">
+							<h6 class="panel-heading">skewY:</h6>
+							<div class="pannel-body">
+								<input class='skewy-input form-control' value='0' placeholder="Y轴倾斜">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+
+		<div class="panel panel-default">
+			<h5 class="custom-setting-heading panel-heading main-heading">
+				<button class="add-custom-setting btn btn-default btn-xs">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+				自定义css属性
+			</h5>
+			<div class="pannel-body">
+				<table class="custom-style-list"></table>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<div class="sprite-setting-container panel panel-primary">
+
+	<h4 class="panel-heading">元素属性</h4>
+
+	<div class="pannel-body form-inline">
+
+		<div class="setting-wrap">
+			<table class="setting-list">
+				<tr>
+				
+						<div class="panel panel-default">
+							<h6 class="panel-heading">图片</h6>	
+							<div class="pannel-body">
+								<div class="img-select-container">
+									<label class="img-select-text">暂无图片</label>
+									<input class="img-select-text-input form-control" >
+									<button class="img-select-input-btn btn btn-primary btn-xs">
+										选择
+										<input class="img-select-input form-control" type="file" >
+									</button>
+								</div>
+							</div>
+						</div>
+								
+
+				</tr>
+				<tr>
+					<td class="panel panel-default">
+						<h6 class="panel-heading">名称</h6>
+						<div class="pannel-body">
+							<input class="name-input form-control" placeholder="名称">
+						</div>
+					</td>
+					<td class="panel panel-default">
+						<h6 class="panel-heading">类名</h6>
+						<div class="pannel-body">
+							<input class="class-input form-control" placeholder="类名">
+						</div>
+					</td>	
+				</tr>
+
+				<tr>
+					<td class="panel panel-default">
+						<h6 class="panel-heading">模式</h6>
+						<div class="pannel-body">
+                            <div class="dropdown controller-mode-select">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                                比例缩放
+                                <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1">比例缩放</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1">固定尺寸</a>
+                                    </li>
+                                </ul>
+                            </div>
+						</div>
+					</td>
+
+				</tr>
+
+			</table>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<h5 class="custom-setting-heading panel-heading main-heading">
+			<button class="add-sprite-custom-setting btn btn-default btn-xs">
+				<span class="glyphicon glyphicon-plus"></span>
+			</button>
+			自定义css属性
+		</h5>
+		<div class="pannel-body">
+			<table class="sprite-custom-style-list"></table>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+

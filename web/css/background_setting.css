@@ -1,0 +1,35 @@
+
+
+.background-setting{
+	
+}
+.background-setting label{
+	font-size: 12px;
+	margin-right: 9px;
+}
+.background-setting table td{
+	padding: 4px;
+}
+.background-image-setting-file-input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	opacity: 0;
+}
+
+.background-image-setting-file-btn{
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 24px;
+}
+
+
+.background-image-setting-filename{
+	display: inline-block;
+	width: 60px;
+	font-size: 12px;
+}

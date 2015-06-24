@@ -1,0 +1,76 @@
+.user-images{
+    width: 700px;
+    height: 500px;
+}
+
+.user-images-all-list{
+    overflow: auto;
+    width: 150px;
+    height: 500px;
+}
+.user-images .panel-heading{
+    font-size: 14px;
+    padding: 5px 8px;
+}
+
+.user-images .pannel-body{
+    font-size: 14px;
+    margin: 0;
+}
+
+.user-images .user-images-content{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 508px;
+    height: 470px;
+    background: #485563;
+    padding: 10px;
+    text-align: left;
+    overflow: auto;
+
+}
+.user-images .img-container{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #546271;
+    display: inline-block;
+    overflow: hidden;
+    margin: 2px;
+}
+.user-images .user-no-img-tips{
+    text-align: center;
+}
+.user-images .user_images_item.active{
+   background-color: #485563;
+}
+.user-images .img-del-btn{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(231, 89, 89);
+    right: 2px;
+    top: 2px;
+    border: none;
+    border-radius: 99px;
+
+}
+.user-images .img-del-btn:after{
+    content: 'x';
+    color: #fff;
+    position: absolute;
+    left: 6px;
+    top: -2px;
+}
+.user-images-available-size{
+    position: absolute;
+    right: 20px;
+    z-index: 10;
+    top: 5px;
+    font-size: 14px;
+}
+.user-images-work-list,.user-images-controller-list{
+    min-height: 40px;
+    background: #4e5d6c;   
+}

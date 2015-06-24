@@ -1,0 +1,14 @@
+/* 元件设置弹窗 */
+.controller-setting-container{
+	
+}
+
+.form-inline .controller-setting-name-input,.form-inline .controller-setting-width-input,.form-inline .controller-setting-height-input{
+	width: 80px;
+	margin-right: 10px;
+}
+.controller-height-input{
+	margin-right: 0px;
+}
+
+

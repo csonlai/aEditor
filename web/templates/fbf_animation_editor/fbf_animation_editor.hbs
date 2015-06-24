@@ -1,0 +1,88 @@
+<div class="fbf-animation-editor" id="{{id}}">
+    <!-- 图片选择和各种选项 -->
+    <div class="form-inline">
+        <table>
+
+            <tr>
+                <td>
+                    <label>名称：</label>
+                </td>
+                <td>
+                    <input class="fbf-name-input form-control need-empty-validate" placeholder="元件名称" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>图片选择：</label>
+                </td>
+                <td>
+                    <label class="fbf-img-class-name">暂无图片</label>
+                    <input class="fbf-img-input need-img-validate">
+                    <button class="btn btn-primary btn-xs fbf-img-select-btn">
+                        选择
+                        <input class="fbf-img-select" type="file">
+                    </button>
+                </td>
+            </tr>
+                
+            <tr>
+                <td>
+                    <label>帧数：</label>
+                </td>
+                <td>
+                    <input class="fbf-frame-count-input form-control need-num-validate need-empty-validate" placeholder="帧数">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>方向：</label>
+                </td>
+                <td>
+
+                    <div class="dropdown fbf-frame-direction-selector">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                        从左到右
+                        <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1">从左到右</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1">从上到下</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </td>
+            </tr>  
+            <tr>
+                <td>
+                    <label>每帧时间间隔：</label>
+                </td>
+                <td>
+                    <input class="fbf-frame-duration-input form-control need-num-validate need-empty-validate" placeholder="帧间时间间隔">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>重复播放：</label>
+                </td>
+                <td>
+                    <input class="fbf-animation-repeat-setting" type="checkbox">
+                    <input class="fbf-animation-repeat-count form-control need-num-validate" placeholder="重复次数">
+                </td>
+            </tr>                        
+        </table>
+    </div>
+
+     <!-- 逐帧动画预览 -->
+    <div class="fbf-animation-preview">
+    </div>
+    <div>
+        
+</div>
+

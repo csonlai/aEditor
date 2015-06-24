@@ -1,0 +1,240 @@
+p{
+	margin: 0;
+}
+
+
+.sprite{
+	position: absolute;
+	cursor: move;
+	left: 0;
+	top: 0;
+	-webkit-transform-origin:center;
+/*	z-index: 500;*/
+	background-size: 100% 100%;
+	/*background-repeat: no-repeat;*/
+	text-align: left;
+	color: #000;
+	word-break: break-all;
+/*	background-color: rgb(79, 205, 180);*/
+
+	/*background: gray;*/
+}
+
+/*.sprite.empty-sprite-container{
+	border: 1px solid #000;
+}*/
+/*.sprite.empty-sprite-container:after{
+	content: '容器';
+	position: absolute;
+	width: 30px;
+	height: 22px
+	left: 50%;
+	top:50%;
+	margin-left: -15px;
+	margin-top: -11px;
+	color:#000;
+
+}*/
+
+
+/*.playing_animation .sprite{
+	cursor: default;
+}*/
+/*.sprite-img{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+*/
+.sprite-container{
+	position: absolute;
+	width:100%;
+	top:40%;
+	text-align: center;
+	margin:0 auto;
+}
+
+.sprite.selected{
+	outline:1px solid rgb(244, 224, 96);
+	z-index: 600 !important;
+}
+
+.sprite.selected .ui-resizable-handle,.sprite.selected .ui-rotatable-handle{
+	display: block !important;
+}
+
+.sprite.locked .ui-resizable-handle,.sprite.locked .ui-rotatable-handle{
+	display: none !important;
+}
+
+.sprite.locked {
+	cursor: default;
+	outline: none !important;
+}
+
+.sprite.sprite-invisible{
+/*	background-color:transparent !important;
+	background-image: none !important;*/
+	display: none !important;
+
+}
+
+.sprite-img{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+.playing_animation .running-sprite .sprite-img{
+	display: none;
+}
+
+
+.playing_animation .running-sprite .sprite-event-action-flag{
+	display: none;
+}
+.playing_animation .running-sprite .sprite-jump-next-flag{
+	display: none;
+}
+.playing_animation .sprite{
+	cursor: default;
+}
+
+.sprite .rotate-handle{
+	position: absolute;
+	right: 0;
+	bottom: -22px;
+	width: 15px;
+	height: 15px;
+	background: rgb(59, 168, 164);
+	cursor: url(http://www.ipresst.com/style/image/edit/rotate.png),auto;
+
+}
+
+.sprite-event-action-flag{
+	cursor: default;
+	position: absolute;
+	top: -24px;
+	font-size: 12px;
+	left: 0;
+	background: rgba(254, 92, 16, 0.7);
+	padding: 2px 6px;
+	color: #fff;
+	word-break: initial;
+}
+.sprite-jump-next-flag{
+	cursor: default;
+	position: absolute;
+	right: -20px;
+	width: 12px;
+	height: 16px;
+	bottom: 0;
+	top: auto;
+	color: rgb(116, 178, 233);
+}
+
+.text-wrap{
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 16px;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+
+.playing_animation .text-wrap{
+	width:100%;
+	height:100%;
+	-webkit-transform:scale(1,1) !important;
+}
+
+
+.controller-wrap{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.stage .controller{
+/*	width: 100% !important;
+	height: 100% !important;*/
+}
+
+.ui-rotatable-handle {
+	background: #f5dc58;
+	border: 1px solid #FFF;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 10px;
+	right: -10px;
+	margin: 0 0 0 -5px;
+	position: absolute;
+	width: 10px;
+	bottom: -20px;
+}
+
+.sprite .ui-resizable-handle,.sprite .ui-rotatable-handle{
+	display: none !important;
+}
+
+
+/*.stage .ui-resizable-handle,.stage .ui-rotatable-handle{
+	display: block !important;
+}
+*/
+.ui-resizable-handle{
+	background: rgb(244, 224, 96);
+}
+
+.ui-resizable-se {
+	cursor: se-resize;
+	width: 9px;
+	height: 9px;
+	right: -5px;
+	bottom: -5px;
+}
+
+
+.ui-resizable-e,.ui-resizable-n ,.ui-resizable-s,.ui-resizable-w {
+	width: 9px;
+	height: 9px;	
+}
+.ui-resizable-e {
+	cursor: e-resize;
+	right: -5px;
+	top: 50%;
+	margin-top: -5px;
+}
+
+.ui-resizable-n {
+	cursor: n-resize;
+	top: -5px;
+	left: 50%;
+	margin-left: -5px;
+}
+
+.ui-resizable-s {
+	cursor: s-resize;
+	bottom: -5px;
+	left: 50%;
+	margin-left: -5px;
+}
+
+.ui-resizable-w {
+	cursor: w-resize;
+	left: -5px;
+	top: 50%;
+	margin-top: -5px;
+}
+.test-width-div{
+	position: absolute;
+	left:-99999px;
+	top:0;
+	background:red;
+	font-size: 16px;
+
+}

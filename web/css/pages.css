@@ -1,0 +1,87 @@
+/* 多页容器 */
+.pages-container{
+	width:100%;
+}
+/* 多页列表 */ 
+.pages-list{
+
+}
+
+
+.pages-container .pages-add-button{
+	width: 80%;
+	margin: 10px auto 10px;
+	background: rgb(100, 110, 119);
+}
+.pages-container .pages-add-button:hover{
+	background: #485563;
+}
+
+
+/* 页(iPhone尺寸比例640 * 960) */
+.pages-list .page{
+	position: relative;
+	width:100px;
+	height:150px;
+	background: #fff;
+	cursor: pointer;
+	margin: 4px auto;
+
+}
+.page .auto-jump-checkbox,.page .slide-jump-checkbox{
+
+}
+/* 选中页 */
+.pages-list .page{
+	-webkit-transform: scale(0.8,0.8);
+}
+.pages-list .page.selected{
+	-webkit-transform: scale(1,1);
+	z-index: 2;
+}
+.pages-list > li:first-child .page .prejump-checkbox {
+	display: none;
+}
+
+.page-index{
+	position: absolute;
+	width: 100%;
+	line-height: 152px;
+	text-align: center;
+	display: block;
+	font-size: 25px;
+	background: rgb(133, 145, 156);
+}
+
+.page-del-btn{
+	position: absolute;
+	right: 6px;
+	top: 0px;
+	display: none;
+	cursor: pointer;
+	color: #D3D3D3;
+	z-index: 10;
+}
+
+.page.show-del-btn .page-del-btn{
+	display: block;
+}
+
+.page-jump-btn-container{
+	position: absolute;
+	bottom: 6px;
+	right: 5px;
+}
+.page-jump-btn-container > input{
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	-webkit-appearance: none;
+	float: left;
+	color:rgba(49, 70, 91, 0.48)
+}
+.page-jump-btn-container > input:checked:before{
+	/*color: rgb(49, 70, 91);*/
+	color: #fff;
+}
+

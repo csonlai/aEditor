@@ -1,0 +1,71 @@
+/* 内置动画选择弹窗 */
+.dfeditor{
+	width:500px;
+	height: 420px;
+}
+
+.preset-animation-list-container{
+	width: 230px;
+}
+
+.dfeditor td{
+	padding: 4px;
+}
+
+
+.dfeditor .panel-default > .panel-heading{
+	font-size: 14px;
+}
+
+.dfeditor .panel-body{
+	padding: 0;
+}
+
+.form-inline .preset-animation-duration{
+	width: 50px;
+	height: 22px;
+}
+.preset-animation-duration-container{
+	margin-top: 10px;
+}
+.preset-animation-ul-list{
+	height: 350px;
+	overflow: auto;
+}
+.preset-animation-ul-list > h3{
+	font-size: 16px;
+	padding: 12px;
+	margin: 0;
+	background: #485563;
+}
+.preset-animation-ul-list a.list-group-item{
+	color: rgba(255,255,255,0.7) !important;
+}
+
+
+.preset-animation-preview{
+	margin-right: 10px;
+}
+
+
+
+
+
+.preset-animation-demo-container{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 200px;
+	height: 200px;
+	background: rgb(49, 70, 91);
+	overflow: hidden;
+}
+.preset-sprite-demo{
+	position: absolute;
+	left:50%;
+	top:50%;
+	width: 46px;
+	height: 50px;
+	margin: -23px 0 0 -25px;
+	background: url('../img/animaiton_logo.png');
+}

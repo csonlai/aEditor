@@ -1,0 +1,17 @@
+*{margin:0;padding:0;}
+* {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; 
+}
+ul,ol{
+	list-style: none;
+	margin: 0;
+}
+.clearfix:after{
+	display: block;
+	content:' ';
+	clear:both;
+}
+body{
+	padding-top: 0;
+}

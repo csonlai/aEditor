@@ -1,0 +1,80 @@
+.work-list-container{
+	width: 630px;
+	height: 400px;
+	overflow: auto;
+}
+
+.no-work-tips{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.work-list > a{
+	display: inline-block;
+	width: 96px;
+	height: 144px;
+	text-align: center;
+	line-height: 80px;
+	background: rgb(112, 130, 148);
+	font-size: 18px;
+	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 20px;
+
+}
+.work-list > a:hover{
+	background: rgb(112, 130, 148);
+}
+
+.work-list > a .glyphicon-link{
+	display: block;
+	font-size: 30px;
+}
+/*.work-list > a.active,.work-list > a.active:hover{
+	width: 92px;
+	height: 140px;
+	background: transparent;
+	border: 2px solid #df691a;
+	color: #df691a;
+}*/
+
+.list-group-item{
+	position: relative;
+}
+
+.work-delete-btn{
+	display: none;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border:none;
+	right: 5px;
+	top: 5px;
+	font-size:14px;
+	background-color: transparent;
+}
+
+
+.list-group-item.over .work-delete-btn{
+	display: block;
+}
+.pre-work-list,.next-work-list{
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	width: 20px;
+	z-index: 999;	
+	background-color: transparent;
+	border: 0;
+}
+.pre-work-list{
+	left: 10px;
+}
+.next-work-list{
+	right: 10px;
+}
+
+.next-work-list.disabled,.pre-work-list.disabled{
+	opacity: 0.5;
+}

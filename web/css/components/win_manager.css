@@ -1,0 +1,52 @@
+.win-mask{
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: 10000;
+}
+.win-container{
+	position: absolute;
+	left: 50%;
+	top:50%;
+/*	background: #4E5D6C;*/
+	background: #546271;
+}
+.win-content-single-wrap{
+	position: relative;
+	padding: 20px 40px 70px;
+}
+
+.win-container input.warning{
+	outline:1px solid rgb(202, 108, 108);
+}
+
+.win-btn-container{
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
+}
+
+.win-btn-container > button{
+	font-size: 14px;
+}
+
+.win-header{
+}
+
+.win-confirm-btn{
+	margin-right: 10px;
+	padding-left: 20px;
+  	padding-right: 20px;
+}
+
+.win-validate-word{
+	position: absolute;
+	left: 16px;
+	bottom: 20px;
+	font-size: 12px;
+	color: rgb(202, 108, 108);
+}

@@ -1,0 +1,126 @@
+.css-editor{
+/*	display: none;*/
+	/*height: 600px;*/
+	padding-bottom: 30px;
+	color:white;
+
+}
+.css-editor .panel-default > .panel-heading{
+	color: #fff; 
+	font-size: 12px; 
+}
+.css-editor .pannel-body{
+/*	height: 36px;*/
+}
+.css-editor .dropdown > button,.css-editor input{
+	font-size: 12px;
+}
+/*.css-editor input{
+	background: rgb(100, 110, 119);
+}*/
+.css-editor td{
+	width:50%;
+	box-sizing: border-box;
+  	padding: 1px;
+}
+
+.css-editor .main-heading{
+	background: rgb(78, 93, 108);
+}
+
+.css-editor .dropdown > button{
+	width: 100%;
+}
+
+.css-editor .dropdown .caret{
+	margin-left:60px
+}
+
+.css-editor .dropdown-menu{
+	min-width: 123px;
+}
+
+.css-editor .form-control{
+	width: 100%;
+}
+/*.css-editor .dropdown > button{
+	padding: 2px 5px;
+ 	width: 90%;
+}*/
+/*
+.css-editor .dropdown .btn .caret{
+	margin-left: 40px;
+}*/
+.css-editor h4,.css-editor h5{
+
+	padding: 2px 5px;
+	line-height: 20px;
+/*	margin: 5px 0;
+	font-size: 14px;
+	background: gray;*/
+	font-size: 14px;
+}
+.keyframe-setting-container{
+
+}
+
+.setting-list{
+	width: 100%;
+}
+.setting-wrap{
+	clear: both;
+	margin-bottom: 15px;
+}
+
+.img-select-container{
+	height: 35px;
+	background: rgb(100, 110, 119);
+}
+
+.css-editor .img-select-text-input{
+	width: 80%;
+	height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 3px 0;
+}
+.img-select-input-btn{
+	position: relative;
+	top: -1px;
+	
+}
+.img-select-input{
+	height: 100%;
+	opacity: 0 !important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.img-select-text{
+	display: none !important;
+	/*display: inline-block;*/
+	margin: 9px 0 0 15px;
+	width: 55px;
+	height: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.custom-setting-heading{
+	position: relative;
+}
+
+.custom-setting-heading .add-custom-setting,.custom-setting-heading .add-sprite-custom-setting{
+	position: absolute;
+	right: 10px;
+	top: 2px;
+	background: transparent;
+}
+.custom-style-delete-btn{
+	background: transparent;
+	border: none;
+	padding: 2px;
+	height: 100%;
+}

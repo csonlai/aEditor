@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no" />
+
+<title>AEditor</title>
+
+
+
+<!-- build:css ./css/main.css -->
+<link rel="stylesheet" href="./css/bootstrap/bootstrap.css"/>
+<link rel="stylesheet" href="./css/bootstrap/bootswatch.min.css"/>
+
+<link rel="stylesheet" href="./css/base.css"/>
+<link rel="stylesheet" href="./css/device.css"/>
+<link rel="stylesheet" href="./css/animate.css"/>
+<link rel="stylesheet" href="./css/page_animation.css"/>
+
+<link rel="stylesheet" href="./css/jq-ui-drag.css"/>
+<link rel="stylesheet" href="./css/index.css"/>
+<link rel="stylesheet" href="./css/pages.css"/>
+<link rel="stylesheet" href="./css/stages.css"/>
+<link rel="stylesheet" href="./css/framesbar.css"/>
+<link rel="stylesheet" href="./css/sprite.css"/>
+<link rel="stylesheet" href="./css/csseditor.css"/>
+<link rel="stylesheet" href="./css/preset_editor.css"/>
+<link rel="stylesheet" href="./css/controller_setting.css"/>
+<link rel="stylesheet" href="./css/controller_list.css"/>
+<link rel="stylesheet" href="./css/main-show.css"/>
+<link rel="stylesheet" href="./css/animation_emit_type_setting.css"/>
+<link rel="stylesheet" href="./css/sprite-action-setting.css"/>
+<link rel="stylesheet" href="./css/fbf_animation_editor.css"/>
+<link rel="stylesheet" href="./css/img_path_setting.css"/>
+<link rel="stylesheet" href="./css/background_setting.css"/>
+<link rel="stylesheet" href="./css/color_picker.css"/>
+<link rel="stylesheet" href="./css/work_list.css"/>
+<link rel="stylesheet" href="./css/login_win.css"/>
+<link rel="stylesheet" href="./css/user-images.css"/>
+
+<link rel="stylesheet" href="./css/components/dropmenu.css"/>
+<link rel="stylesheet" href="./css/components/win_manager.css"/>
+
+<!-- endbuild -->
+</head>
+<body>
+<div id="outter-container" class="scene">
+
+ <script>
+    (function(){
+        document.domain = 'alloyteam.com';
+        var ua = navigator.userAgent;
+       
+        // 非chrome浏览器，显示提示语
+        if(ua.indexOf('Chrome') === -1){
+            document.body.innerHTML = '<div class="chrome-tips"><i class="chrom-icon"></i><span class="chrome-text">请使用chrome浏览器访问</span></div>';
+        }
+
+    })();
+
+ </script>
+
+
+    <!-- 顶部栏 -->
+    <div class="top-bar">
+
+        <div class="editor-logo">AEditor</div>
+
+        <div class="title-container">
+            <input class="work-title" value="暂无标题">
+            <input class="controller-name-title" value="暂无标题">
+        </div>
+
+
+
+        <div class="user-info-container">
+            <button class="img-manager-btn btn btn-default btn-sm">图片管理</button>
+            <button class="user-login-btn btn btn-default btn-sm">登录</button>
+            <div class="user-name-text"></div>       
+            <a class="user-login-out-btn">注销</a> 
+        </div>
+
+
+    </div>
+    <div class="main-bar">
+        <!-- 精灵选择框 -->
+        <div class="sprite-select-container panel panel-primary">
+            <h4 class="panel-heading">精灵管理</h4>
+            <div class="sprite-select-container-wrap pannel-body list-group">
+
+            </div>
+            
+        </div>
+
+
+        <!-- 帧展示栏外层容器 -->
+        <div class="frames-bar-outter-container">
+
+            <!-- 帧展示栏的工具栏 -->
+            <div class="frames-tool-bar-container">
+                <div class="frames-tool-bar">
+                    <button class="play-all-btn btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+                    </button>
+                    <button class="play-button btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </button>
+                    <button class="stop-button btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon glyphicon-stop" aria-hidden="true"></span>
+                    </button>
+                    <span class="frames-bar-duration-text" >时长：</span>
+                    <input class="frames-bar-duration-input form-control" value="0"/>
+                    <span>秒</span>
+                    <label class="framesbar-controller-text">播放元件动画：</label>
+                    <input type="checkbox" class="framesbar-controller-play">
+
+                    <label class="framesbar-repeat-text">重复播放：</label>
+                    <input type="checkbox" class="framesbar-repeat-mode">
+                    <input class="framesbar-repeat-time form-control" placeholder="播放次数">
+
+
+                    <label class="framesbar-repeat-text">显示名称：</label>
+                    <input type="checkbox" class="show-class-btn">           
+                </div>
+            </div>
+            <!-- 帧展示栏列表 -->
+            <div class="frames-bar-wraper">
+
+                <div class="accordin-container panel panel-info">
+                    <h4 class="panel-heading">帧动画</h4>
+                    <div class="frames-bar-wraper-container panel-body">
+                        <div class='frames-bar-timeline-wrap'>
+                            <ul class='frames-bar-timeline'></ul>
+                        </div>
+                        <!-- 帧展示栏 -->
+                        <div class="frames-bar-container">
+             <!--                <label class="frames-bar-timeline-label">时长：</label> -->
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordin-container panel panel-success">
+                    <h4 class="panel-heading">事件帧动画</h4>
+                    <div class="event-emit-framesbar-pannel panel-body">
+                         <!-- 事件触发帧展示栏 -->
+                        <div class="event-emit-frames-bar-container"></div>
+                    </div>
+                </div>
+                
+            </div>  
+        </div>  
+
+        <!-- 左侧栏 -->
+        <div class="left-bar">
+            <!-- 场景控制栏 -->
+            <div class="scene-create-container accordin-container panel panel-primary">
+                <h4 class="panel-heading">场景</h4>
+                <div class="panel-body">
+                    <button class="new-btn btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        新建
+                    </button>
+                    <button class="save-btn btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                        保存
+                    </button>
+                    <button class="load-btn btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span>
+                        载入
+                        </button>
+                    <button class="output-file btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span>
+                        导出
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- 元件控制栏 -->
+            <div class="controller-create-container accordin-container panel panel-primary">
+                <h4 class="panel-heading">元件</h4>
+                <div class="panel-body">
+                    <button class="back-scene btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                        回到场景
+                    </button>
+
+                    <button class="save-controller-btn btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>
+                        保存元件
+                    </button> 
+                </div>           
+            </div>
+
+            <!-- 当前元件尺寸 -->
+            <div class="controller-size-container accordin-container panel panel-primary">
+                <h4 class="panel-heading">元件信息</h4>
+                <div class="panel-body">
+                    <div class="controller-size">
+
+                        <div class="panel panel-default">
+                            <h5 class="panel-heading">元件名</h5>
+                            <div class="panel-body">
+                                <input class="controller-name-input form-control" value="暂无名称">
+                            </div>
+                        </div>    
+
+
+                        <div class="panel panel-default">
+                            <h5 class="panel-heading">宽度</h5>
+                            <div class="panel-body">
+                                <input class="controller-width-input form-control" value="100">
+                            </div>
+                        </div>
+              
+                        <div class="panel panel-default">
+                            <h5 class="panel-heading">高度</h5>
+                            <div class="panel-body">
+                                <input class="controller-height-input form-control" value="120">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 基本对象容器 -->
+            <div class="base-obj-container accordin-container panel panel-primary">
+                <h4 class="panel-heading">基本对象</h4>
+                <div class="panel-body">
+                    <button class="sprite-add-button btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                        <span>图片</span>
+                        <input type="file">
+                    </button>
+                    <button class="sprite-text-add-button btn btn-default btn-sm" style="display:none;">
+                        <span class="glyphicon glyphicon-font" aria-hidden="true"></span>
+                        <span>多文</span>
+                    </button>      
+                    <button class="sprite-single-text-add-button btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-font" aria-hidden="true"></span>
+                        <span>文字</span>
+                    </button> 
+                    <button class="sprite-layer-add-button btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                        <span>图层</span>
+                    </button>                   
+                </div>            
+            </div>  
+
+            <!-- 元件容器 -->
+            <div class="controller-container accordin-container panel panel-primary">
+                <h4 class="panel-heading">元件</h4>
+                <div class="panel-body">
+                    <button class="add-controller btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+                        新建元件
+                    </button>
+                    <button class="add-fbf-animation btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
+
+                        新建逐帧元件
+                    </button>
+                    <button class="controller-add-button btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
+                        插入元件
+                    </button>
+                     
+                </div>
+            </div>
+
+
+            <!-- 预设动画 -->
+            <div class="preset-animation-btn-container accordin-container panel panel-primary">
+                <h4 class="panel-heading">预设动画</h4>
+                <div class="panel-body">
+                    <button class="add-preset-animation btn btn-default btn-sm">
+                         <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
+                        插入预设动画
+                    </button>           
+                </div>
+            </div>
+
+            <!-- 页容器 -->
+            <div class="pages-container accordin-container panel panel-primary">
+                <h4 class="panel-heading">分页</h4>
+                <div class="panel-body">
+
+                    <div class="stage-transition-direction-container">
+                        <label>上下方向</label>
+                        <input class="stage-transition-utd" type="radio" name="direction" checked>
+            
+                        <label>左右方向</label>
+                        <input class="stage-transition-ltr"  type="radio" name="direction">
+                    </div>
+    
+
+                   <div>
+            
+                        <div class="dropdown stage-transition-type-select">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                                移动
+                                <span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1">移动</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1">渐变移动</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1">缩放</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1">旋转</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                
+
+
+
+                    <button class="pages-add-button btn btn-default btn-xs btn-block">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+                    <ol class="pages-list"></ol>
+                </div>
+              
+            </div>
+
+
+
+
+        </div>
+        <!-- 中间舞台容器 -->
+        <div class="main-content">
+
+            <div class="stages-container">
+                <div class="marvel-device iphone4s silver">
+                    <div class="top-bar"></div>
+                    <div class="sleep"></div>
+                    <div class="volume"></div>
+                    <div class="camera"></div>
+                    <div class="sensor"></div>
+                    <div class="speaker"></div>
+                    <div class="screen">
+                        <!-- 舞台列表 -->
+                        <ol class="stages-list"></ol>
+                        <script id="globalEditor" type="text/plain" style="width:400px;height:200px;"></script>
+                    </div>
+                    <div class="home"></div>
+                    <div class="bottom-bar"></div>
+                </div>
+                
+                
+            </div>        
+        </div>
+
+        <!-- 右边css编辑器 -->
+        <div class="right-bar">
+            <div class="css-editor"></div>
+        </div>
+    </div>
+
+    <div class="main-show-container">
+        <div class="main-show-mask">
+            <button class="main-show-close-btn">
+                <span class="glyphicon glyphicon-remove-sign"></span>
+            </button>
+
+            <div class="marvel-device iphone4s silver">
+                <div class="top-bar"></div>
+                <div class="sleep"></div>
+                <div class="volume"></div>
+                <div class="camera"></div>
+                <div class="sensor"></div>
+                <div class="speaker"></div>
+                <div class="screen">
+                    <div class="main-show-area"></div>
+                </div>
+                <div class="home"></div>
+                <div class="bottom-bar"></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- 不同弹窗公用的遮罩-->
+    <div class="win-mask">
+        <div class="win-wrap">
+            <div class="win-container">
+                <div class="win-header modal-header">窗口标题</div>
+                <div class="win-validate-word">
+                    
+                </div>
+                <div class="win-btn-container">
+                    <button class="win-cancel-btn btn btn-default btn-sm">取消</button>
+                    <button class="win-confirm-btn btn btn-primary btn-sm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="login-win-mask">
+        <div class="login-win">
+            <iframe></iframe>
+
+        </div>
+    </div>
+
+    <!-- build:js ./js/base.js -->
+    <script src="./js/base/jquery.js"></script>
+    <script src="./js/base/jquery-ui.js"></script>
+    <script src="./js/bootstrap/bootstrap.js"></script>
+    <script src="./js/bootstrap/bootswatch.js"></script>
+    <script src="./js/base/jquery-event-move.js"></script>
+    <script src="./js/base/jquery-event-swipe.js"></script>
+    <!-- endbuild -->
+
+
+    <!-- build:js ./ueditor/ueditor.js -->
+    <script src="./ueditor/ueditor.config.js"></script>
+    <script src="./ueditor/ueditor.all.js"></script>
+    <!-- endbuild --> 
+
+
+    <script data-main="./js/main" src="./js/require/require.js"></script>
+
+</div>
+</body>
+</html>

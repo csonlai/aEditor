@@ -1,0 +1,19 @@
+
+.emit-type-setting{
+	
+}
+.emit-type-setting td{
+	padding: 4px;
+}
+.emit-type-setting label{
+	font-size: 14px;
+}
+.emit-type-setting .form-control{
+	height: 28px;
+	width: 90px;
+}
+.emit-type-setting .sprite-action-once-input{
+	position: relative;
+	top: -4px;
+}
+

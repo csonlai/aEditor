@@ -1,0 +1,14 @@
+.drop-menu{
+	display:none;
+	width: 140px;
+	background:orange;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+}
+.drop-menu .drop-menu-item{
+	padding: 5px 10px;
+	font-size: 14px;
+}

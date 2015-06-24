@@ -1,0 +1,104 @@
+
+<!-- 编辑区域-->
+<div class="dfeditor" id="{{id}}">
+    <div class="preset-animation-list-container form-inline">
+        <div class="preset-animation-list">
+            <div class="panel panel-default">
+    
+                <div class="panel-body">
+
+                    <div class="preset-animation-ul-list list-group">
+                        <h3>常规效果</h3>
+                        {{#each attentionSeekersListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>弹入效果</h3>
+                        {{#each bouncingEntrancesListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+
+                        <h3>弹出效果</h3>
+                        {{#each bouncingExitsListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>渐入效果</h3>
+                        {{#each fadingEntrancesListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>淡出效果</h3>
+                        {{#each fadingExitsListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>翻转效果</h3>
+                        {{#each flippersListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+
+                        <h3>飞速效果</h3>
+                        {{#each lightSpeedListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+
+                        <h3>旋转进入效果</h3>
+                        {{#each rotateEntrancesListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+
+                        <h3>旋转消失效果</h3>
+                        {{#each rotateExitsListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>滑动进入效果</h3>
+                        {{#each slideEntranceListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>滑动消失效果</h3>
+                        {{#each slideExitListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+
+
+                        <h3>放大进入效果</h3>
+                        {{#each zoomEntrancesListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>缩小消失效果</h3>
+                        {{#each zoomExitListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                        <h3>特殊效果</h3>
+                        {{#each specialListConfig}}
+                            <a class="list-group-item" data-name="{{name}}">{{cname}}</a>
+                        {{/each}}
+
+                    </div>  
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <div class="preset-animation-duration-container">
+            <label>时长(s)：</label>
+            <input class="preset-animation-duration form-control need-empty-validate need-num-validate" value="1">
+        </div>
+    </div>
+    
+    <div class="preset-animation-demo-container">
+        <div class="preset-sprite-demo"></div>
+    </div>
+</div>
+

@@ -1,0 +1,75 @@
+.stages-container{
+/*	width:320px;
+	height:480px;*/
+	height: 880px;
+	margin: 0 auto;
+	overflow: hidden;
+	/*background: red; */
+	background: rgb(49, 70, 91);
+}
+
+.stages-list{
+	position: relative;
+	height: 100%;
+	background: rgb(189, 189, 189);
+/*	overflow: hidden;*/
+}
+.stages-list .stage{
+	position: absolute;
+/*	width: 100%;
+	height: 100%;*/
+	left:50%;
+	top: 50%;
+	background: #fff;
+	background-size:100% 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.stages-list .stage.selected,.stages-list .stage.ui-resizable{
+	z-index: 800;
+	overflow: visible;
+}
+/* 全局精灵 */
+.stages-list > .global-sprite-wrap{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+}
+
+
+
+
+
+.stage.pause .sprite{
+	 -webkit-animation-play-state: paused !important;
+}
+
+
+.pt-page-current{
+	visibility: visible;
+	z-index: 100;
+}
+
+
+.stage-transition-direction > div{
+	float: left;
+}
+
+
+.stage-transition-type-select{
+	margin-top: 10px;
+}
+.stage-transition-type-select > button{
+	width: 100%;
+	text-align: left;
+  	text-indent: 5px;
+}
+.stage-transition-type-select .btn .caret{
+  float: right;
+  margin-top: 6px;
+}
+.stage-transition-type-select .dropdown-menu{
+	min-width: 130px;
+}
+

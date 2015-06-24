@@ -1,0 +1,21 @@
+<div class="sprite-draggable-wrapper">
+	<div class="sprite-resizable-wrapper">
+		<div id="{{id}}"  class="sprite">
+			<div class="sprite-img" style="width:100%;height:100%;background-image:url({{imgUrl}});">
+			</div>
+
+			{{#if useController}}
+				<div class="controller-wrap">
+				</div>
+			{{/if}}
+	
+			{{#if isText}}
+				<div class="text-wrap">
+				</div>
+			{{/if}}
+
+
+			<div class="sprite-class-name-tag"></div>
+		</div>
+	</div>
+</div>

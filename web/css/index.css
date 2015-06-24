@@ -1,0 +1,479 @@
+.panel-heading{
+	margin: 0;
+}
+.panel{
+	margin: 0;
+}
+.panel-body{
+	padding: 10px;
+/*	background: #2B3E50;*/
+}
+.navbar{
+	border-radius: 0;
+	min-height: 0;
+	margin-bottom:0;
+}
+.top-bar{
+	padding-left: 10px;
+	height: 50px;
+}
+.top-bar button{
+	margin-right: 6px;
+	margin-top: 10px;
+	font-size: 12px;
+}
+.scene-create-container .btn,.base-obj-container .btn{
+	margin-bottom:10px; 
+}
+.top-bar .back-scene,.top-bar .save-controller-btn{
+	width: 60px;
+}
+.top-bar button:first-child{
+	margin-left: 142px;
+}
+
+
+.top-bar .user-info-container{
+	position: absolute;
+	right: 20px;
+	top:10px;	
+}
+
+.user-info-container .user-login-btn{
+	display: none;
+	margin-top: 0;
+	margin-right: 0;
+}
+.user-info-container .user-name-text{
+	display: inline-block;
+}
+.user-info-container .user-login-out-btn{
+	display: none;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 10px;
+	position: relative;
+	top: -2px;
+	cursor: pointer;
+}
+
+
+/* 左侧栏 */
+.left-bar{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 170px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 0 0 25px;
+}
+.left-bar h4{
+	padding: 2px 5px;
+	font-size: 14px;
+	background: gray;
+}
+.base-obj-container{
+
+}
+.controller-container button{
+	margin-bottom: 10px;
+
+}
+.base-obj-container .sprite-add-button{
+	position: relative;
+}
+
+.base-obj-container .sprite-add-button input{
+	position: absolute;
+	opacity: 0;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.add-preset-animation{
+	display: block;
+}
+
+.controller-size-container{
+	display: none;
+}
+
+.controller-size-container .panel-default > .panel-heading{
+	background: #485563;
+}
+.controller-size-container .panel-default > .panel-heading,.controller-size-container .panel-default > .panel-body{
+	font-size: 12px;
+}	
+.controller-size-container .panel-body{
+	padding: 0;
+}
+
+.controller-size{
+	width: 100%;
+	font-size: 12px;
+	color: #fff;
+}
+
+.controller-size-container td{
+	color: #fff;
+	font-size: 12px;
+	width: 50%;
+}
+.controller-size-container input{
+	width: 100%;
+}
+
+.controller-create-container{
+	display: none;
+}
+.controller-create-container .panel-body{
+	padding: 0;
+}
+.controller-create-container button{
+	padding: 15px 3px;
+	box-sizing: border-box;
+	width: 48%;
+}
+
+
+
+/* 主体内容 */
+.main-bar{
+	position: relative;
+	clear: left;
+}
+
+.frames-bar-wraper-container{
+	position: relative;
+	padding: 0;
+	background: #2B3E50;
+}
+
+/* 主容器 */
+.main-content{
+	/*padding-bottom: 120px;*/
+}
+
+
+
+
+.marvel-device{
+	display: block;
+	margin:20px auto 0;
+}
+
+/* 右容器 */
+.right-bar{
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 250px;
+	overflow-x:hidden; 
+	overflow-y:auto; 
+	background: rgb(72, 85, 99);
+}
+
+/* 帧总时长 */
+.frames-tool-bar-container{
+	/*display: none;*/
+}
+.frames-tool-bar{
+	font-size: 12px;
+	height: 36px;
+}
+.frames-bar-duration-text,.framesbar-controller-text{
+	margin-left: 10px
+}
+.framesbar-repeat-text{
+	margin-left: 10px;
+}
+.frames-tool-bar .frames-bar-duration-input,.frames-tool-bar .framesbar-repeat-time{
+	width: 34px;
+	background: rgb(100, 110, 119);
+	box-sizing: border-box;
+	display: inline-block;
+	height: 20px;
+  	padding: 2px;
+	color: #fff;
+	font-size: 12px;
+}
+.frames-tool-bar .framesbar-repeat-time{
+	display: none;
+	width: 65px;
+	margin-left: 10px;
+}
+
+.jump-type-select{
+	font-size: 14px;
+}
+
+
+.accordin-container > .ui-accordion-header{
+	position: relative;
+	padding-left: 28px;
+	font-weight: normal;
+	line-height: 20px;
+	height: 20px;
+	margin: 0;
+}
+.accordin-container > .ui-accordion-header:before{
+	position: absolute;
+	left: 5px;
+	top: 8px;
+	content: " ";
+	width: 13px;
+	height: 13px;
+	width: 0;
+	height: 0;
+	margin-left: 5px;
+	vertical-align: middle;
+	border-top: 6px solid;
+	border-right: 6px solid transparent;
+	border-left: 6px solid transparent;
+	-webkit-transform:rotate(-90deg);
+}
+
+.accordin-container > .ui-accordion-header.ui-state-active:before{
+	-webkit-transform:rotate(0deg);	
+}
+
+
+.colpick{
+	z-index: 12000;
+}
+
+.controller-mode-select{
+
+}
+
+
+.controller-mode-select .caret{
+	margin-left: 62px;
+}
+
+
+
+.form-control{
+	height: 35px;
+	padding: 4px 2px 4px 14px;
+	color: #fff;
+	box-sizing: border-box;
+	background: rgb(100, 110, 119);
+	font-size: 12px;
+}
+.form-control[disabled]{
+	background: rgb(100, 110, 119);
+}
+.dropdown > button{
+	padding: 6px 5px;
+	box-sizing: border-box;
+	background: rgb(100, 110, 119);
+	height: 35px;
+	font-size: 12px;
+}
+.controller-mode-select > button{
+	width: 100%;
+}
+
+
+/* 作品标题 */
+.title-container{
+	margin: 0 auto;
+	width: 200px;
+}
+
+.work-title,.controller-name-title{
+	border: none;
+	background: none;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	margin-top: 12px;
+}
+.controller-name-title{
+	display: none;
+}
+
+.editor-logo{
+	position: absolute;
+	left:10px;
+	top:9px;
+	font-size: 16px;
+}
+
+
+/*.playing_animation .sprite.selected .ui-resizable-handle,.playing_animation .sprite.selected .ui-rotatable-handle{
+	display: none !important;
+}*/
+
+.sprite-class-name-tag{
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.7);
+	color: #fff;
+	font-size: 12px;
+	padding: 0px 4px;
+}
+.sprite-class-name-tag{
+	display: none;
+}
+.show-class-name .sprite{
+	outline:1px solid #000 !important;
+}
+.show-class-name .sprite-class-name-tag{
+	display: block;
+}
+
+#globalEditor{
+	position: absolute;
+	left:-9999px;
+	color:#000;
+}
+
+
+#edui1_toolbarbox{
+	position: absolute;
+	top: -40px;
+	width: 455px;
+}
+
+.edui-editor,.edui-editor-iframeholder{
+	width: 100% !important;
+	height:100% !important;
+}
+
+#edui_fixedlayer{
+	color:#000;
+}
+
+.sprite-text-add-button{
+	margin-top: 10px;
+}
+
+.stage-transition-direction-container{
+	text-align: center;
+}
+.stage-transition-direction-container > input{
+	position: relative;
+	top: 3px;
+}
+
+.sprite-select-container{
+	display: none;
+	position: absolute;
+	right: 255px;
+	top: 0px;
+	width: 192px;
+	min-height: 263px;
+	max-height: 623px;
+	overflow: auto;
+}
+
+.sprite-select-container > h4{
+	padding: 2px 5px;
+	line-height: 20px;
+	font-size: 14px;
+}
+.sprite-select-container .sprite-name{
+	display: inline-block;
+	width: 108px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 22px;
+	font-size: 14px;
+	line-height: 30px;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+
+
+.sprite_item{
+
+	padding: 0;
+	border: none;
+	position: relative;
+}
+.sprite_item.active,.sprite_item.active:hover{
+	background-color: #485563;
+}
+
+.sprite_item input,.sprite_item button{
+	position: relative;
+	top: -5px;
+	width: 16px;
+	height: 16px;
+	margin: 0 0 0 2px;
+	border: none;
+	-webkit-appearance: none;
+	padding: 0;
+	background: transparent;
+}
+.sprite_item .sprite-list-delete-btn{
+	top: -10px;
+}
+/* 使用chrome浏览器访问提示 */
+.chrome-tips{
+	text-align: center;
+	height: 120px;
+	margin: -61px 0 0 0;
+	top: 50%;
+	position: absolute;
+	width: 100%;
+	background: rgb(110, 133, 135);
+	line-height: 120px;
+	font-size: 20px;
+}
+.chrom-icon{
+	display: inline-block;
+	background: url(../img/chrome.png);
+	width: 96px;
+	height: 96px;
+	margin-top: 12px;
+}
+.chrome-text{
+	position: relative;
+	top: -38px;
+	left: 20px;
+}
+
+.img-manager-btn{
+	position: relative;
+	top: -6px;
+	margin-right: 10px;
+}
+
+
+/* 滚动条样式设置 */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-clip: content-box;
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

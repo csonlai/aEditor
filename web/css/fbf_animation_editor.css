@@ -1,0 +1,83 @@
+
+.fbf-animation-editor{
+	width:470px;
+
+}
+.fbf-animation-editor label{
+	font-size: 14px;
+}
+.fbf-animation-editor table tr{
+
+}
+.fbf-animation-editor table td{
+	padding: 7px 2px;
+}
+
+.fbf-animation-preview{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 180px;
+	height: 180px;
+	background: rgb(49, 70, 91);
+
+}
+
+.fbf-animation-editor .fbf-animation-repeat-count{
+
+	display: none;
+	margin-left: 10px;
+	width: 70px;
+	height: 25px;
+	padding: 2px;
+}
+
+.fbf-img-input{
+	display: none;
+}
+.fbf-img-select-btn{
+	position: relative;
+}
+.fbf-img-select{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.fbf-animation-editor .fbf-img-class-name{
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+.fbf-preview-animation-btn{
+	margin-right: 10px;
+}
+
+.fbf-animation-editor .dropdown-menu > li > a{
+	padding: 3px 12px;
+}
+
+.fbf-animation-editor .dropdown-menu{
+	min-width: 81px;
+}
+
+.fbf-animation-editor .dropdown .caret{
+	margin-left: 10px;
+}
+
+.fbf-animation-demo{
+	position: absolute;
+	left:50%;
+	top:50%;
+}
+
+
+
+
+
+
+
+

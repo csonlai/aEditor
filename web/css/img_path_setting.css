@@ -1,0 +1,19 @@
+.img-path-setting-mask{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 1000;
+}
+.img-path-setting{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -175px 0 0 -250px;
+	width:500px;
+	height: 350px;
+	background: gray;
+}
