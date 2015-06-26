@@ -302,9 +302,17 @@
 
 .editor-logo{
 	position: absolute;
-	left:10px;
-	top:9px;
-	font-size: 16px;
+	left: 10px;
+	top: 9px;
+	font-size: 22px;
+}
+.editor-beta-icon{
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	left: 90px;
+	top: 20px;
+	font-size: 10px;
 }
 
 
@@ -445,7 +453,7 @@
 	left: 20px;
 }
 
-.img-manager-btn{
+.img-manager-btn,.guide-btn{
 	position: relative;
 	top: -6px;
 	margin-right: 10px;

@@ -319,6 +319,9 @@
 			this.resourceLoadedCallback = callback;
 		},
 		create:function(animationObject){
+			
+			spriteElementMap = {};
+			controllerMap = {};
 
 			if(!animationObject){
 				return;
@@ -389,8 +392,8 @@
 
 		createSingle:function(ao,stageElement,isFromEdit){
 		
-			spriteElementMap = {};
-			controllerMap = {};
+			// spriteElementMap = {};
+			// controllerMap = {};
 
 			var self = this;
 			//元素动画数组 

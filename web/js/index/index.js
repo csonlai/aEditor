@@ -233,6 +233,8 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 			this.logoutBtn = $('.user-login-out-btn');
 			// 图片管理按钮
 			this.managerImgBtn = $('.img-manager-btn');
+			// 使用教程按钮
+			this.guideBtn = $('.guide-btn');
 	
 
 			//事件绑定
@@ -1071,6 +1073,11 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 					self.showLogin();
 					
 				});
+			});
+
+			// 使用教程按钮点击
+			this.guideBtn.on('click',function(){
+				window.open('http://www.alloyteam.com/?p=7576',true);
 			});
 
 
