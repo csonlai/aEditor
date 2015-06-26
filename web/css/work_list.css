@@ -54,6 +54,11 @@
 	background-color: transparent;
 }
 
+.list-work-name{
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 
 .list-group-item.over .work-delete-btn{
 	display: block;
