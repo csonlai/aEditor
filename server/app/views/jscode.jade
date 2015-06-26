@@ -1,0 +1,15 @@
+extends layout/layout
+block content
+    script(src='jquery.js')
+    script.
+        var jscode = 'console.log("hello world")';
+        function js(){
+            var domainUrl = 'http://localhost';
+            $.ajax({
+                type:'post',
+                url:domainUrl + '/jscode',
+                data:{
+                    jscode:jscode
+                }
+            });
+        }

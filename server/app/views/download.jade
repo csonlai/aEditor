@@ -1,0 +1,15 @@
+extends layout/layout
+block content
+    script(src='jquery.js')
+    script.
+        function dw(){
+            var domainUrl = 'http://localhost:3000';
+            console.log('1111')
+            $.ajax({
+                type:'get',
+                url:domainUrl + '/workdownload',
+                data:{
+                    user_id:'ID_USER_0'
+                }
+            });
+        }

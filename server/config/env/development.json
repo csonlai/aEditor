@@ -1,0 +1,12 @@
+{
+    "env":"dev",
+    "db":"mongodb://127.0.0.1:27117/aeditorx",
+    "user": "",
+    "pass": "",
+    "cdn":"public/cdn/",
+    "err":"devErrorCode.json",
+    "loggerDir": "logs",
+    "port":3000,
+    "loggerDir": "logs",
+    "userIdUri":"http://10.18.87.64:10000/api/public/user/info"
+}

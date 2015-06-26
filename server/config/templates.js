@@ -1,7 +1,3 @@
-/**
- * Created by fujunou on 2015/4/21.
- */
-
 module.exports = function (app, viewsPath) {
     /*var handlebars = require('express-handlebars');
     var hbs = handlebars.create({

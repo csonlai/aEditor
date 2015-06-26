@@ -1,0 +1,19 @@
+extends layout/layout
+block content
+    h1 增加作品
+    form(method='post', action='/upsert')
+        div
+            span 选择增加类型，0为作品，1为元件
+            input(type='text',name='type')
+        div
+            span 名字
+            input(type='text',name='name')
+        div
+            span 作品JSON串
+            input(type='text',name='work_data')
+        div
+            span 元件JSON串
+            input(type='text',name='ctrl_data')
+        div
+            input(type='submit',value="增加")
+

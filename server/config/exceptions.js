@@ -1,7 +1,3 @@
-/**
- * Created by fujunou on 2015/4/21.
- */
-
 module.exports = function (app) {
     // 定制404页面
     // 定制404页面
