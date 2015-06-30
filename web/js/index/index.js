@@ -1077,7 +1077,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 
 			// 使用教程按钮点击
 			this.guideBtn.on('click',function(){
-				window.open('http://www.alloyteam.com/?p=7576',true);
+				window.open('http://www.alloyteam.com/2015/06/h5-jiao-hu-ye-bian-ji-qi-aeditor-jie-shao/',true);
 			});
 
 
