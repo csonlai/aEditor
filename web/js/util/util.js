@@ -1,7 +1,7 @@
 //工具类
 define([],function(){
 	var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-	var domainUrl = 'http://aeditor.alloyteam.com';
+	var domainUrl = 'http://aeditor.alloyteam.com/cgi';
 
 	var userId = 'ID_USER_0';
 
