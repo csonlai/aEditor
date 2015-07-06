@@ -1,7 +1,8 @@
 //工具类
 define([],function(){
 	var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-	var domainUrl = 'http://aeditor.alloyteam.com/cgi';
+	var domainUrl = 'http://aeditor.alloyteam.com';
+	var cgiUrl = domainUrl + '/cgi';
 
 	var userId = 'ID_USER_0';
 
@@ -413,7 +414,7 @@ define([],function(){
 		deleteWork:function(workId,success,fail){
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/delete',
+				url:cgiUrl + '/delete',
 				data:{
 					work_id:workId
 				},
@@ -433,7 +434,7 @@ define([],function(){
 		
 			$.ajax({
 				type:'GET',
-				url:domainUrl + '/query',
+				url:cgiUrl + '/query',
 				data:{
 					t:Date.now(),
 					user_id:userId,
@@ -455,7 +456,7 @@ define([],function(){
 		createWork:function(workData,success,fail){
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/upsert',
+				url:cgiUrl + '/upsert',
 				data:{
 					name:workData.name,
 					work_data:JSON.stringify(workData)
@@ -476,7 +477,7 @@ define([],function(){
 		createController:function(controllerData,success,fail){
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/upsert',
+				url:cgiUrl + '/upsert',
 				data:{
 					type:1,
 					name:controllerData.name,
@@ -498,7 +499,7 @@ define([],function(){
 		getControllerList:function(page,size,success,fail){
 			$.ajax({
 				type:'GET',
-				url:domainUrl + '/query',
+				url:cgiUrl + '/query',
 				data:{
 					t:Date.now(),
 					type:1,
@@ -521,7 +522,7 @@ define([],function(){
 		deleteController:function(id,success,fail){
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/delete',
+				url:cgiUrl + '/delete',
 				data:{
 					type:1,
 					ctrl_id:id
@@ -543,7 +544,7 @@ define([],function(){
 			
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/upsert',
+				url:cgiUrl + '/upsert',
 				data:{
 					type:1,
 					ctrl_id:ctrlData.id,
@@ -567,7 +568,7 @@ define([],function(){
 			
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/upsert',
+				url:cgiUrl + '/upsert',
 				data:{
 					work_id:workData.id,
 					name:workData.name,
@@ -589,7 +590,7 @@ define([],function(){
 		logout:function(success,fail){
 			$.ajax({
 				type:'GET',
-				url:domainUrl + '/logout',
+				url:cgiUrl + '/logout',
 				data:{
 					t:Date.now()
 				},
@@ -621,7 +622,7 @@ define([],function(){
 
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/upload',
+				url:cgiUrl + '/upload',
 				data:param,
 				success:function(data){
 					var retcode = data.retcode;
@@ -664,7 +665,7 @@ define([],function(){
 		postJsCode:function(code,success){
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/jscode',
+				url:cgiUrl + '/jscode',
 				data:{
 					user_id:userId,
 					jscode:code
@@ -685,7 +686,7 @@ define([],function(){
 		getImgs:function(success){
 			$.ajax({
 				type:'GET',
-				url:domainUrl + '/getimgs',
+				url:cgiUrl + '/getimgs',
 				success:function(data){
 			
 					var retcode = data.retcode;
@@ -703,7 +704,7 @@ define([],function(){
 		downloadWork:function(currentWorkId,success){
 		
 			var aLink = $('<a></a>');
-		    aLink.prop('href',domainUrl + '/workdownload' + (currentWorkId ? '?work_id=' + currentWorkId : ''));
+		    aLink.prop('href',cgiUrl + '/workdownload' + (currentWorkId ? '?work_id=' + currentWorkId : ''));
 
 		    var evt = document.createEvent("HTMLEvents");
     		evt.initEvent("click", false, false);
@@ -722,7 +723,7 @@ define([],function(){
 			}
 			$.ajax({
 				type:'POST',
-				url:domainUrl + '/delimg',
+				url:cgiUrl + '/delimg',
 				data:param,
 				success:function(data){
 			
@@ -747,7 +748,7 @@ define([],function(){
 		delTemp:function(success,fail){
 			$.ajax({
 				type:'GET',
-				url:domainUrl + '/deltemp?' + 't=' + Date.now(),
+				url:cgiUrl + '/deltemp?' + 't=' + Date.now(),
 				success:function(data){
 			
 					var retcode = data.retcode;
@@ -768,7 +769,7 @@ define([],function(){
 		delControllerTemp:function(success,fail){
 			$.ajax({
 				type:'GET',
-				url:domainUrl + '/delctrltemp?' + 't=' + Date.now(),
+				url:cgiUrl + '/delctrltemp?' + 't=' + Date.now(),
 				success:function(data){
 			
 					var retcode = data.retcode;
