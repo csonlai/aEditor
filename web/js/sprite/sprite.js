@@ -575,7 +575,7 @@ define(['tmpl','util','controller'],function(tmpl,Util,Controller){
 
 				if(self.stage.id == stageId){
 					// 拥有同类型的帧展示栏
-					if((e.framesBar.emitType == 'none' && self.getCommondFramesBar()) || (e.framesBar.emitType == 'event' && self.getEventFramesBar(e.framesBar.emitEventName))){
+					if((e.framesBar.emitType == 'none' && self.getCommondFramesBar()) || (e.framesBar.emitType == 'eventEmit' && self.getEventFramesBar(e.framesBar.emitEventName))){
 						//播放动画的时候移除text-wrap元素的样式属性。交给精灵本身的样式处理
 						if(self.isText){
 							var	textElement = self.getTextElement();
