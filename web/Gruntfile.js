@@ -40,8 +40,7 @@ module.exports = function(grunt) {
                 src: [
                     '<%= base.dist %>/js/*.js',
                     '<%= base.dist %>/ueditor/*.js',
-                    '<%= base.dist %>/css/*.css',
-                    '<%= base.dist %>/img/*.{jpg,jpeg,png,gif}'
+                    '<%= base.dist %>/css/*.css'
                 ]
             }
         },
