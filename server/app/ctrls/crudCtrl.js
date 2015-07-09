@@ -102,6 +102,7 @@ module.exports.upsert = function (req, res, next) {
                     // 由于重命名了图片保存目录，所以要修改图片路径
                     $work_data[dataKey] = $work_data[dataKey]
                         .replace(/"imgUrl"\:".*?\b(temp\/(ctrl|work))\b.*?"/gm, rfn)
+                        .replace(/"backgroundImage"\:".*?\b(temp\/(ctrl|work))\b.*?"/gm, rfn)
                         .replace(/"spriteImgUrl"\:".*?\b(temp\/(ctrl|work))\b.*?"/gm, rfn)
                         .replace(/url\(.*?\b(temp\/(ctrl|work))\b.*?\)/gm, rfn);
 
