@@ -117,7 +117,7 @@ define(['tmpl','util','color_picker','win_manager'],function(tmpl,Util,ColorPick
 		setInitInput:function(opt){
 			currentImgFileUrl = opt.backgroundImage;
 			this.backgroundColorSettingInput.val(opt.backgroundColor || 'rgb(255,255,255)');
-			this.fileNameLabel.html(opt.imageFileName || '暂无文件');
+			this.fileNameLabel.html(opt.imgFileName || '暂无文件');
 		},
 		//展示
 		show:function(opt){
@@ -137,7 +137,7 @@ define(['tmpl','util','color_picker','win_manager'],function(tmpl,Util,ColorPick
 					$(window).trigger('stageBackgroundChange',{
 						color:colorValue,
 						image:currentImgFileUrl,
-						imageFileName:currentImgFileName
+						imgFileName:currentImgFileName
 					});
 									
 				}

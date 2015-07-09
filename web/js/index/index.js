@@ -402,7 +402,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 			this.loginBtn.show();
 			this.loginWin.show();
 			var loginIframe = this.loginWin.find('iframe');
-			loginIframe.attr('src','http://account.alloyteam.com/page/ptlogin?redirect=http%3A%2F%2Faeditor.alloyteam.com%2Flogin&close=1');
+			loginIframe.attr('src','http://account.alloyteam.com/page/ptlogin?redirect=http%3A%2F%2Faeditor.alloyteam.com%2Fcgi%2Flogin&close=1');
 		},
 		//隐藏登录
 		hideLogin:function(userName){
@@ -1668,7 +1668,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 			t_obj.backgroundImage = stage.backgroundImage;
 
 			if(t_obj.backgroundImage && isOutPut){
-				t_obj.backgroundImage = './img/' + stage.imageFileName;
+				t_obj.backgroundImage = './img/' + stage.imgFileName;
 			}
 
 			t_obj.backgroundColor = stage.backgroundColor;

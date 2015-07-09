@@ -150,7 +150,7 @@ define(['tmpl','sprite','util','dropmenu','controller','sprite-action-setting','
 			this.setBackgroundColor(opt.backgroundColor);
 			//设置背景图片
 			this.setBackgroundImage(opt.backgroundImage,opt.imgFileName);
-			
+
 			this.bind();
 		},
 		bind:function(){
@@ -181,6 +181,7 @@ define(['tmpl','sprite','util','dropmenu','controller','sprite-action-setting','
 	
 			//离开该页的事件行为
 			this.setLeaveAction(opt.actionEventName);
+	
 
 		},	
 		//设置离开该页的事件行为
@@ -246,7 +247,7 @@ define(['tmpl','sprite','util','dropmenu','controller','sprite-action-setting','
 				mode:this.mode,
 				isControllerStage:this.isControllerStage,
 				backgroundImage : this.backgroundImage,
-				imageFileName : this.imageFileName,
+				imgFileName : this.imgFileName,
 				backgroundColor:this.backgroundColor,
 				spriteListData:spriteListData,
 				actionEventName:this.actionEventName
@@ -259,14 +260,14 @@ define(['tmpl','sprite','util','dropmenu','controller','sprite-action-setting','
 			});
 			this.backgroundColor = color;
 		},
-		setBackgroundImage:function(image,imageFileName){
-			if(image && imageFileName){
+		setBackgroundImage:function(image,imgFileName){
+			if(image && imgFileName){
 				var element = this.getStageElement();
 				element.css({
 					'background-image':'url(' + image + ')'
 				});
 				this.backgroundImage = image;
-				this.imageFileName = imageFileName;
+				this.imgFileName = imgFileName;
 			}
 		},
 		select:function(){
@@ -555,7 +556,7 @@ define(['tmpl','sprite','util','dropmenu','controller','sprite-action-setting','
 				currentStage.setBackgroundColor(e.color);
 			}
 			if(e.image){
-				currentStage.setBackgroundImage(e.image,e.imageFileName);
+				currentStage.setBackgroundImage(e.image,e.imgFileName);
 			}
 		});
 
@@ -1455,7 +1456,7 @@ define(['tmpl','sprite','util','dropmenu','controller','sprite-action-setting','
 					BackgroundSetting.show({
 						backgroundColor:currentStage.backgroundColor,
 						backgroundImage:currentStage.backgroundImage,
-						imageFileName:currentStage.imageFileName
+						imgFileName:currentStage.imgFileName
 					});
 				}
 				//设置翻页行为

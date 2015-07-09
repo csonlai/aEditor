@@ -65,7 +65,7 @@ define(['tmpl','util','win_manager'],function(tmpl,Util,WinManager){
 				//保存到全部数据的数组
 				allWorkList = allWorkList.concat(workList);
 
-				callback && callback(workList,data.cur_page == data.total_page);
+				callback && callback(workList,data.cur_page + 1 == data.total_page);
 
 			});
 			
@@ -110,6 +110,12 @@ define(['tmpl','util','win_manager'],function(tmpl,Util,WinManager){
 			$('.work-list').on('click',function(e){
 		
 				var target = $(e.target);
+
+				if(!target.hasClass('.list-group-item')){
+					target = target.closest('.list-group-item');
+				}
+
+				if(!target.length) return;
 
 				if(currentTarget){
 					currentTarget.removeClass('active');
@@ -241,7 +247,7 @@ define(['tmpl','util','win_manager'],function(tmpl,Util,WinManager){
 		},
 		//检查翻页按钮的显示/隐藏状态
 		checkPageBtnVisibility:function(){
-			if(totalPageNum <= currentPageIndex){
+			if(totalPageNum <= currentPageIndex + 1){
 				this.nextBtn.addClass('disabled');
 			}
 			else{
