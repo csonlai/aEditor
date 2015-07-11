@@ -19,6 +19,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 	var showClassName;
 
 	var uid;
+	var timeId;
 
 	//全局登录回调
 	window.loginCb = function(data){
@@ -403,6 +404,18 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 			this.loginWin.show();
 			var loginIframe = this.loginWin.find('iframe');
 			loginIframe.attr('src','http://account.alloyteam.com/page/ptlogin?redirect=http%3A%2F%2Faeditor.alloyteam.com%2Fcgi%2Flogin&close=1');
+			// 检测QQ登录是否成功
+			timeId = setInterval(function(){
+				var uid = localStorage.getItem('crossWindowSuccessUid');
+				if(uid){
+					clearInterval(timeId);
+					window.loginCb({
+						uid:uid
+					});
+					localStorage.removeItem('crossWindowSuccessUid');
+				}
+
+			},500);
 		},
 		//隐藏登录
 		hideLogin:function(userName){
@@ -411,6 +424,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 			this.logoutBtn.show();
 			this.loginBtn.hide();
 			this.loginWin.hide();
+			clearInterval(timeId);
 		},
 		//删除临时目录
 		deleteTemp:function(){
