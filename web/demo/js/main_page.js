@@ -37,94 +37,92 @@
 	var loadedCount = 0;
 	//全局精灵的包装元素
 	var globalSpriteWrap;
-
-
-
-
 	var T;
+	// 最小加载等待时间
+	var minLoadDuration = isMobile ? 1000 : 0;
+	// 上一次的加载时间
+	var lastLoadTime = 0;
+	// 点击事件名
+	var clickEventName = isMobile ? 'tap' : 'click';
 
 	//低于android 4.0的系统
     var isUnderAndroid4 = $.os && $.os.android && Number($.os.version.split('.')[0]) < 4;
-
+    // 图片加载完成回调
     function __onImgResourceLoaded(callback,totalCount){
+    	var __loadCallback = function(){
 
-    	return function(){
-    		loadedCount ++;
-    		//百分比
-    		callback && callback(~~(loadedCount / totalCount * 100));
+    		var now = Date.now();
+    		var percent;
+
+    		if(now - lastLoadTime > minLoadDuration){
+    			loadedCount ++;
+    			lastLoadTime = now;
+    			percent = ~~(loadedCount / totalCount * 100);
+
+	    		// 百分比
+	    		callback && callback(percent);
+    		}
+    		// 没到最小间隔时间，则一段时候后再检查
+    		else{
+  
+    			setTimeout(function(){
+    				__loadCallback();
+    			}, minLoadDuration - (now - lastLoadTime));
+    		}
+
     	}
 
-
+    	return __loadCallback;
     };
-
+    // 随机id
 	function getRandomId(){
 		return ~~(Math.random() * 1e8);
 	};
-
+	// 下一页
 	function nextPageHandler(){
 		var animationObject = MainPage.animationObjectsList[currentIndex];
-		if(/*animationObject.slideJump &&*/ currentIndex < stageList.length - 1){
+		if(currentIndex < stageList.length - 1){
 			MainPage.next();
 		}
 	};
-
+	// 上一页
 	function prePageHandler(){
-
 		var animationObject = MainPage.animationObjectsList[currentIndex];
-		if(/*animationObject.slideJump &&*/ animationObject.preJump && currentIndex > 0){
+		if(animationObject.preJump && currentIndex > 0){
 			MainPage.pre();
 		}
 	};
 
 
-    //hack android2.3下需要过滤的3d变形属性,避免3d变形属性导致变形失效的bug
-    function filterAndroid23Transform(transformString){
-        return transformString.replace(/translateZ\(.*?\)/g,'')
-                       .replace(/rotateX\(.*?\)/g,'')
-                       .replace(/rotateY\(.*?\)/g,'')
-                       .replace(/rotateZ/g,'rotate')
-                       .replace(/translateZ\(.*?\)/g,'')
-                       .replace(/perspective\(.*?\)/g,'');
-    };
-
+    // 处理变形字符串
     function processMobileTransform(transformString){ 
-
     	if(isUnderAndroid4){
-    		transformString = filterAndroid23Transform(transformString);
-    	}
-    
-        // var str = transformString.replace(/translateX\((.*?)\)/g,function(str,value){
-        //     var value = Number(value.replace('px',''));
-        //     return 'translateX(' + ((value / 320) * winWidth) + 'px)';
-        // });
-        // .replace(/translateY\((.*?)\)/g,function(str,value){
-        //     var value = Number(value.replace('px',''));
-        //     return 'translateY(' + ((value / 480) * winHeight) + 'px)';
-        // });
-
-       
+    		transformString = Transition.filterAndroid23Transform(transformString);
+    	}       
 		return transformString;
-        //return str;
         
     };
-
-
+    // 主管理
 	var MainPage = {
+		// 初始化
 		init:function(opt){
 			opt = opt || {};
+			// 容器
 			this.showArea = $('.main-show-area');
+			// 是否显示类名标识
 			this.showClassName(opt.showClassName);
+			// 事件绑定
 			this.bind();
 		},
+		// 事件绑定
 		bind:function(){
 			//防止ios下滚动条出现
 			this.showArea.on('touchmove',function(e){
 				e.preventDefault();
 			});
-
 		},	
+		// 翻页绑定
 		bindSwipeHandler:function(){
-
 			//上到下
 			if(currentStageTransitionDirection == 'utd'){
 				this.showArea.bind('swipeDown',prePageHandler);
@@ -137,7 +135,7 @@
 			}
 		},
 		//去掉特定舞台上得所有精灵的动画属性
-		_resetSpritesAnimationByStage:function(stageElement){
+		__resetSpritesAnimationByStage:function(stageElement){
 			//去掉舞台内所有精灵的动画属性
 			var spriteList = stageElement.find('.ms-sprite');
 			spriteList.each(function(i,spriteElement){
@@ -146,10 +144,14 @@
 				//根据id找到该元素的初始css属性
 				var firstCssProperty = firstCssPropertyMap[spriteElementId];
 				//恢复初始css属性,让元素在翻页时，初始位置正确，为动画开始位置
-				$(spriteElement).css(firstCssProperty);
+				if(firstCssProperty){
+					$(spriteElement).css(firstCssProperty);
+				}
+				
 			});
 			stageElement.addClass('ms-no-animation');
 		},
+		// 移除禁用动画的属性
 		_resumeSpritesAnimationByStage:function(stageElement){
 			stageElement.removeClass('ms-no-animation');
 		},
@@ -191,7 +193,7 @@
 				}
 			});
 		},
-		_bindClickAction:function(t,from){
+		__bindClickAction:function(t,from){
 			var self = this;
 		
 			var handler;
@@ -219,12 +221,12 @@
 					clickActionMap = {};
 				}
 				if(clickActionMap[t.id]){
-					t.elem.off('click',handler);
+					t.elem.off(clickEventName,handler);
 				}
 
 				clickActionMap[t.id] = handler;
 				
-				t.elem.on('click',handler);
+				t.elem.on(clickEventName,handler);
 			}
 			
 		},
@@ -275,8 +277,6 @@
 				//动画结束，去掉transition动画属性,运行下一个舞台的动画
 				self._bindStageAnimationEnd(stageElement);
 
-
-
 				self.createSingle(ao,stageElement);
 
 				//该页动画完成之后自动跳转
@@ -302,7 +302,11 @@
 
 			var totalCount = Object.keys(imgUrlsMap).length;
 			if(totalCount == 0){
-				callback && callback(100);
+				
+				setTimeout(function(){
+					callback && callback(100);
+				},minLoadDuration);
+				
 				return;
 			}
 			$.each(imgUrlsMap, function(imgUrl){
@@ -318,6 +322,9 @@
 			this.resourceLoadedCallback = callback;
 		},
 		create:function(animationObject){
+			
+			spriteElementMap = {};
+			controllerMap = {};
 
 			if(!animationObject){
 				return;
@@ -356,10 +363,17 @@
 				//资源加载完成,开始运行
 				if(percent == 100){
 
-					//添加所有元素
-					self.addElements(animationObjectsList);
+					setTimeout(function(){
+						//添加所有元素
+						self.addElements(animationObjectsList);
 
-					self.run();
+						// 元素添加完毕事件
+						$(window).trigger('allSpriteAdded');
+
+						// 运行动画
+						self.run();
+
+					},minLoadDuration);
 				}
 			});
 
@@ -381,8 +395,8 @@
 
 		createSingle:function(ao,stageElement,isFromEdit){
 		
-			spriteElementMap = {};
-			controllerMap = {};
+			// spriteElementMap = {};
+			// controllerMap = {};
 
 			var self = this;
 			//元素动画数组 
@@ -403,8 +417,7 @@
 					//设置用户指定的类名	
 					newElement.addClass(t.className);
 					//获取用户填充的元素内容
-					var elementContent = $('#' + t.className + '_content').html();
-
+					var elementContent = $('#t_content_' + t.className).html();
 					if(elementContent){
 						//填充元素内容
 						newElement.html(elementContent);
@@ -412,10 +425,9 @@
 
 				}
 				//绑定动画结束行为
-				self._bindEndAction(t,'main_show');
-
+				self.__bindEndAction(t,'main_show');
 				//绑定精灵点击行为
-				self._bindClickAction(t,'main_show');
+				self.__bindClickAction(t,'main_show');
 			});
 
 			//事件触发的动画键值表
@@ -428,11 +440,7 @@
 				//事件对应精灵元素
 				var spriteElement = spriteElementMap[et.id];
 				var controllerSingle = controllerMap[et.id];
-				// //只有事件帧展示栏的元素
-				// if(!spriteElement){
-				// 	spriteElement = self.addNewElement(t,stageElement,isFromEdit);
-				// }
-	
+		
 				//用新元素赋值
 				et.elem = spriteElement;
 
@@ -442,12 +450,13 @@
 					var stageElement = et.elem.closest('.ms-stage');
 					
 					//区分来源，避免编辑区和播放区动画由于同时监听同一个事件，或者是全局事件,同时播放
-					if(e && e.from == 'main_show' && (e.stageElementIndex == stageElement.data('index') || e.isGlobalEvent) ){
+					if(e && e.from == 'main_show' && (et.isGlobal || e.stageElementIndex == stageElement.data('index') || e.isGlobalEvent) ){
 					
 						//绑定动画结束行为
-						self._bindEndAction(et,'main_show');
+						self.__bindEndAction(et,'main_show');
 
 						Transition.playSingle(et);
+
 						//如果有元件，播放元件动画
 						if(controllerSingle && et.isControllerPlay){
 							self.runSingle(controllerSingle);
@@ -456,24 +465,28 @@
 					}
 				};
 				eventHandler.et = et;
-				var elementId = et.elem.prop('id');
-				//记录哪些事件该精灵元素已经绑定过，避免重新监听。（一个精灵同一种事件只能监听一次）
-				if(!eventHandlerMap){
-					eventHandlerMap = {};
-				}
-				if(!eventHandlerMap[elementId]){
-					eventHandlerMap[elementId] = {};
-				}
 
-				eventHandlerMap[elementId][eventName] = eventHandler;
-	
-				if(eventTransitonObj.isListenOnce){
-					//监听事件一次，播放对应行为动画
-					$(window).one(eventName,eventHandler);		
-				}
-				else{
-					//监听事件，播放对应行为动画
-					$(window).on(eventName,eventHandler);					
+				if(et.elem){
+			
+					var elementId = et.elem.prop('id');
+					//记录哪些事件该精灵元素已经绑定过，避免重新监听。（一个精灵同一种事件只能监听一次）
+					if(!eventHandlerMap){
+						eventHandlerMap = {};
+					}
+					if(!eventHandlerMap[elementId]){
+						eventHandlerMap[elementId] = {};
+					}
+
+					eventHandlerMap[elementId][eventName] = eventHandler;
+		
+					if(eventTransitonObj.isListenOnce){
+						//监听事件一次，播放对应行为动画
+						$(window).one(eventName,eventHandler);		
+					}
+					else{
+						//监听事件，播放对应行为动画
+						$(window).on(eventName,eventHandler);					
+					}
 				}
 				
 
@@ -483,7 +496,7 @@
 		},
 
 
-		_bindEndAction:function(t,from){
+		__bindEndAction:function(t,from){
 			var self = this;
 			//存在动画结束要触发的事件名和动画结束要跳转到下一页
 			if(t.animationEndEventName || t.animationEndJumpNext){
@@ -516,6 +529,9 @@
 			var targetStargeElememt = stageList[index];
 			//要跳到的舞台的obj
 			var targetAnimationObject = this.animationObjectsList[index];
+			//不存在目标页，直接返回
+			if(!targetAnimationObject) return;
+
 			//要离开的舞台obj
 			var animationObject = this.animationObjectsList[currentIndex];
 			//触发翻页行为事件
@@ -526,9 +542,6 @@
 				});
 				
 			}
-
-	
-
 
 			//触发离开某页的事件
 			$(window).trigger('pageLeave',{
@@ -571,7 +584,7 @@
 
 			//播放翻页动画前删除要跳到的舞台上的所有精灵原有动画属性
 			if(targetAnimationObject.played && targetAnimationObject.replay){
-				this._resetSpritesAnimationByStage(targetStargeElememt);
+				this.__resetSpritesAnimationByStage(targetStargeElememt);
 			}
 
 			currentIndex = index;
@@ -593,16 +606,15 @@
 		//运行动画
 		run:function(){
 
-			$(window).trigger('beforeRun');
 
 			var self = this;
-			//Transition.stop();
+			// 获取动画对象
 			var animationObject = this.animationObjectsList[currentIndex];
-
 			//移除禁止动画属性
 			this._resumeSpritesAnimationByStage(stageList[currentIndex]);
 
 			if(animationObject && (!animationObject.played || animationObject.replay)){
+				// 播放该舞台动画
 				this.runSingle(animationObject);
 				//标记已经播放过
 				animationObject.played = true;
@@ -610,12 +622,12 @@
 				$.each(animationObject.transitionArr,function(i,transitionObj){
 					//有元件并且允许同时播放元件动画
 					if(transitionObj.controllerSingle && transitionObj.isControllerPlay){
+						// 播放元件动画
 						self.runSingle(transitionObj.controllerSingle);
 					}
 				});
 			}
 
-			$(window).trigger('afterRun');
 
 		},
 
@@ -626,9 +638,11 @@
 			var controllerSingle;
 			var controllerWrap;
 			var controllerRenderData = transitionObj.controllerRenderData;
-			var stageContainerElement = $(stageElement.find('.ms-stage-container'));
+			var stageContainerElement = $(stageElement.children()[0]); 
+			
 			//元件
 			if(controllerRenderData){
+				
 				controllerWrap = $('<div></div>',{
 					class:'ms-controller-wrap'
 				});
@@ -637,9 +651,9 @@
 				});
 
 				controllerWrap.append(container);
-
 				controllerSingle = self.createSingle(controllerRenderData,controllerWrap);
 			}
+
 	
 			var elementId = (isFromEdit ? 'controller_sprite_' : 'ms_') + getRandomId()/*transitionObj.id*/ ;
 			var newElement = $('<div></div>',{
@@ -660,7 +674,7 @@
 				classNameTag.text(transitionObj.name);
 				newElement.append(classNameTag);
 			}
-
+			// 样式对象
 			var cssObj = {
 				'z-index':transitionObj.zIndex					
 			};
@@ -669,22 +683,16 @@
 			if(transitionObj.spriteCustomSetting){
 				$.extend(cssObj,transitionObj.spriteCustomSetting);
 			}
-
+			// 图片
 			if(transitionObj.imgUrl){
 				cssObj['background-image'] = 'url(' + transitionObj.imgUrl + ')';
 			}
-			// else if(!isMobile && !controllerRenderData){
-			// 	newElement.addClass('ms-sprite-empty-container');
-			// }
-
-			//newElement.css(cssObj);
+			// 生成关键帧动画
 			if(transitionObj.keyframes && !$.isEmptyObject(transitionObj.keyframes)){
 
 				//以第一个关键帧的css属性设置新元素的初始属性
 				var firstCssProperty = $.extend(cssObj,transitionObj.keyframes['0%']);
 				delete firstCssProperty['-webkit-animation-timing-function'];
-
-
 
 				//mobile环境下得变形字符串处理
 				if(isMobile && !newElement.data('xConvert')){
@@ -692,14 +700,10 @@
 					//标识该元素已经转换过
 					newElement.data('xConvert',1);
 				}
-
-
 				firstCssProperty.width = Number(firstCssProperty.width);
 				firstCssProperty.height = Number(firstCssProperty.height);
-
+				// 设置初始样式
 				newElement.css(firstCssProperty);
-
-
 
 				//保存初始样式，用于翻页时恢复
 				if(!firstCssPropertyMap){
@@ -709,16 +713,21 @@
 			}
 			//只有精灵没有帧展示栏
 			else{
-				newElement.css($.extend({
-					'z-index':transitionObj.zIndex
-				},transitionObj.spriteCssProperties));
+				// 过滤掉图片属性
+				//delete transitionObj.spriteCssProperties.imgUrl;
+
+				newElement.css($.extend(cssObj,transitionObj.spriteCssProperties,{
+					'zIndex':transitionObj.zIndex
+				}));
 			}
 
 
 			if(controllerWrap){
 				controllerWrap.appendTo(newElement);
+				// 元件动画数据
 				transitionObj.controllerSingle = controllerSingle;
 			}
+
 			//全局精灵
 			if(transitionObj.isGlobal){
 				if(!globalSpriteWrap){
@@ -727,18 +736,12 @@
 					});
 					globalSpriteWrap.appendTo(this.showArea);
 				}
-				
 				newElement.appendTo(globalSpriteWrap);
-				
 			}
 			else{
 				//新元素添加到舞台
 				newElement.appendTo(stageContainerElement);				
 			}
-
-
-
-
 			return newElement;
 		},
 		addStage:function(){
@@ -755,6 +758,14 @@
 			stageElement.appendTo(this.showArea);
 
 			return stageElement;
+		},
+		// 触发事件
+		trigger:function(eventName,param){
+			$(window).trigger(eventName,param);
+		},
+		// 事件监听
+		on:function(eventName,handler){
+			$(window).on(eventName,handler);
 		},
 		removeAllAnimationStyle:function(){
 			$('.animation-style').remove();
@@ -773,23 +784,16 @@
 			this.removeAllEventHandler();
 		},
 		removeAllEventHandler:function(){
-		
 			$.each(eventHandlerMap,function(id,eventObj){
 				$.each(eventObj,function(eventName,handler){
 					$(window).off(eventName,handler);
 				});
 			});
-
 			eventHandlerMap = {};
-
 			this.showArea.off('swipeDown',this.prePageHandler);
-
 			this.showArea.off('swipeUp',this.nextPageHandler);	
-
 			this.showArea.off('swipeRight',this.prePageHandler);
-
-			this.showArea.off('swipeLeft',this.nextPageHandler);	
-					
+			this.showArea.off('swipeLeft',this.nextPageHandler);			
 		}
 
 	};
