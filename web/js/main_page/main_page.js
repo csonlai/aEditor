@@ -144,7 +144,10 @@
 				//根据id找到该元素的初始css属性
 				var firstCssProperty = firstCssPropertyMap[spriteElementId];
 				//恢复初始css属性,让元素在翻页时，初始位置正确，为动画开始位置
-				$(spriteElement).css(firstCssProperty);
+				if(firstCssProperty){
+					$(spriteElement).css(firstCssProperty);
+				}
+				
 			});
 			stageElement.addClass('ms-no-animation');
 		},

@@ -234,7 +234,7 @@
                 });
 
                 //hack android 2.3 fill-mode为forwards时不能保持最后样式状态的bug
-                if(lastCssProperties && isMobile){
+                if(lastCssProperties && isMobile && isUnderAndroid4){
                     $(transitionObj.elem).css(lastCssProperties);
                 }
 

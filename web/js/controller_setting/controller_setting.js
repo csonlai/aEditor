@@ -453,6 +453,9 @@ define(['tmpl','util','controller','transition','main_show','win_manager'],funct
 				}
 			}		
 		},
+		addControllerLocalData:function(controllerData){
+			this.allControllerData.push(controllerData);
+		},
 
 		render:function(){
 			if(!this.element){

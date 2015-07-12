@@ -197,7 +197,7 @@ define(['tmpl','util','controller'],function(tmpl,Util,Controller){
 				textContent:this.textContent,
 				isSingle:this.isSingle,
 				zIndex:this.zIndex,
-				actionEventName:this.actionEventName
+				clickActionEventName:this.clickActionEventName
 
 			});
 	
@@ -279,7 +279,7 @@ define(['tmpl','util','controller'],function(tmpl,Util,Controller){
 				}
 				testWidthDiv.html(content);
 
-				visibleWidth = testWidthDiv.width() + 1;
+				visibleWidth = testWidthDiv.width() + 2;
 				visibleHeight = testWidthDiv.height();
 
 				if(this.initialSetting && this.initialSetting.width != null){

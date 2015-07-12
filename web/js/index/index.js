@@ -257,7 +257,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 			if(window.currentMode == 'scene'){
 
 				var localPagesData = Page.getData();
-
+			
 				var localData = {
 					id: currentWorkId,
 					name:this.workTitleText.val(), 
@@ -288,6 +288,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 			if(currentSceneData){
 				currentSceneData.id = workId;
 			}
+
 			currentWorkId = workId;
 			cssEditor.setWorkId(currentWorkId);
 	        Stage.setWorkId(currentWorkId);
@@ -839,6 +840,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 
 				//当前模式
 				self.changeMode('controller');
+				//self.setWorkId(null);
 				//清空数据
 				self.setData({
 					name:e.name
@@ -1039,7 +1041,7 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 					
 
 
-					//第一个关键帧
+					//第一个关键帧场景
 					var firstKeyFrame = framesBar.getFirstKeyFrame();
 					firstKeyFrame.select();		
 				},0);
@@ -1177,10 +1179,13 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 
 			//点击新建元件
 			this.newControllerBtn.on('click',function(){
-				self.setWorkId(null);
+				
 				//先暂存场景数据
 				currentSceneData = self.getData();
 				currentSceneName = currentSceneData.name;
+
+				//self.setWorkId(null);
+
 				//展示元件设置窗口
 				ControllerSetting.BaseSetting.show();
 
@@ -1195,13 +1200,16 @@ define(['tmpl','pages','stages','framesbar','transition','csseditor','preset_ani
 
 				//获取元件编辑数据
 				var controllerEditData = self.getData();
-
+				
 				//获取元件本地数据
 				var localControllerData = ControllerSetting.List.getControllerLocalData(controllerEditData.id);
 
 				if(!localControllerData || localControllerData.name != controllerEditData.name){
 					//元件保存到后台
 					Util.createController(controllerEditData,function(data){
+						currentControllerId = data.id = controllerEditData.id;
+						data.name = controllerEditData.name;
+						ControllerSetting.List.addControllerLocalData(data);
 						alert('保存成功');
 					});			
 				}
