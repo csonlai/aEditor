@@ -105,6 +105,16 @@ module.exports = function(grunt) {
                         dest: '<%= base.dist %>/fonts'
                     }
                 ]        
+            },
+            demo:{
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= base.dev %>/demo',
+                        src: ['./**'],
+                        dest: '<%= base.dist %>/demo'
+                    }
+                ]                  
             }
         },
         useminPrepare: {
@@ -162,6 +172,7 @@ module.exports = function(grunt) {
         grunt.task.run('copy:html');
         grunt.task.run('copy:ueditor');
         grunt.task.run('copy:fonts');
+        grunt.task.run('copy:demo');
 
         grunt.task.run('useminPrepare');
 
