@@ -228,7 +228,7 @@ define(['tmpl','util','transition','win_manager'],function(tmpl,Util,Transition,
 			WinManager.show({
 				headerName:this.headerName,
 				name:this.name,
-				onConfirm:function(){debugger;
+				onConfirm:function(){
 					//名称
 					var name = self.fbfNameInput.val();
 
@@ -261,6 +261,8 @@ define(['tmpl','util','transition','win_manager'],function(tmpl,Util,Transition,
 
 				}
 			});
+
+			this.previewBtn.show();
 
 
 		}
